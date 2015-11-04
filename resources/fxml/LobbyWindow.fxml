@@ -9,8 +9,6 @@
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
-<Scene stylesheets="@/css/default.css" xmlns="http://javafx.com/javafx/8"
-       xmlns:fx="http://javafx.com/fxml/1">
 
 <VBox prefHeight="600.0" prefWidth="800.0">
    <children>
@@ -102,4 +100,3 @@
       </Pane>
    </children>
 </VBox>
-</Scene>

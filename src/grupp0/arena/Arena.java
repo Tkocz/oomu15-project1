@@ -21,7 +21,6 @@ public class Arena extends Application {
     public void start(Stage primaryStage) {
         primaryStage.close();
         primaryStage = null;
-		System.out.prinln("HEHEHEHE");
 
         new Client().run(getParameters().getRaw().toArray(new String[0]));
     }

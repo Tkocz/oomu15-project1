@@ -4,7 +4,7 @@ package grupp0.arena.model;
  * IMPORTS
  *----------------------------------------------*/
 
-import grupp0.arena.view.LoginWindow;
+//import grupp0.arena.view.LoginWindow;
 
 /*------------------------------------------------
  * CLASS

@@ -21,8 +21,19 @@ public abstract class User {
  * FIELDS
  *----------------------------------------------*/
 
+/**
+ * The username.
+ */
 private final String name;
+
+/**
+ * The password.
+ */
 private final String password;
+
+/**
+ * The user's real name.
+ */
 private final String realName;
 
 /*------------------------------------------------

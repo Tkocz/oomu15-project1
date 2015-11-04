@@ -1,16 +1,33 @@
 package grupp0.arena.controller;
 
-import javafx.stage.Stage;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
+/*------------------------------------------------
+ * IMPORTS
+ *----------------------------------------------*/
 
+import grupp0.arena.view.LobbyWindow;
+
+/*------------------------------------------------
+ * CLASS
+ *----------------------------------------------*/
+
+/**
+ * Main program class.
+ *
+ * @author Philip Arvidsson (S133686)
+ */
 public class Client {
-    public void run(String[] args) {
-        System.out.println("HEYLOOOOO");
 
-        Stage stage = new Stage();
-        Scene scene = new Scene(new Button("ASS was here!!!!11"));
-        stage.setScene(scene);
-        stage.showAndWait();
-    }
+/*------------------------------------------------
+ * PUBLIC METHODS
+ *----------------------------------------------*/
+
+/**
+ * Runs the client.
+ *
+ * @param args The program arguments.
+ */
+public void run(String[] args) {
+    new LobbyWindow().showAndWait();
+}
+
 }

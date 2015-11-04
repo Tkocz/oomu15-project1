@@ -26,7 +26,6 @@ Text {
 Button {
     -fx-background-insets: 0,0,0;
     -fx-background-radius: 0,0;
-    -fx-border-width: 0;
     -fx-color: #e04020;
     -fx-cursor: hand;
     -fx-font-weight: bold;
@@ -38,6 +37,12 @@ CheckBox {
 Label {
     -fx-text-fill: #cccccc;
 }
+Pane{
+    -fx-border-width: 1;
+    -fx-border-color: #e0e0e0;    
+}
 .root {
     -fx-background: #202020;
+    -fx-border-width: 5;
+    -fx-border-color: #e0e0e0;
 }

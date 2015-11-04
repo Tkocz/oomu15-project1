@@ -20,7 +20,7 @@ public class LobbyWindow extends Stage{
             setScene(new Scene(fxml.load()));
             setResizable(false);
             setTitle("asyar14h/oomu/Projekt - grupp 0");
-            //getIcons().add(new Image("images/reversi.png")); Ikon för ARENA
+            getIcons().add(new Image("images/icon.png"));
         }
         catch (IOException e) {
             e.printStackTrace();

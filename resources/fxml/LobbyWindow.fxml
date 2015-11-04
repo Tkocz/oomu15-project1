@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="285.0" prefWidth="800.0">
+         <children>
+            <HBox layoutX="23.0" layoutY="17.0" prefHeight="222.0" prefWidth="775.0">
+               <children>
+                  <Pane prefHeight="222.0" prefWidth="373.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Othello">
+                           <effect>
+                              <ImageInput>
+                                 <source>
+                                    <Image url="file:/C:/Users/Martin/Desktop/prototyp/reversi.png" />
+                                 </source></ImageInput>
+                           </effect>
+                        </Button>
+                        <Button layoutX="120.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="TicTacToe" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="222.0" prefWidth="377.0">
+                     <children>
+                        <Text layoutX="38.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="List of available Tournaments for the game selected" wrappingWidth="272.0" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets bottom="5.0" left="5.0" />
+                     </opaqueInsets>
+                  </Pane>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <Pane prefHeight="332.0" prefWidth="800.0">
+         <children>
+            <HBox layoutX="23.0" layoutY="-1.0" prefHeight="222.0" prefWidth="754.0">
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="275.0">
+                     <children>
+                        <ImageView fitHeight="222.0" fitWidth="298.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Double_facepalm.jpg" />
+                           </image>
+                        </ImageView>
+                        <Text fill="#f2ebeb" layoutX="60.0" layoutY="121.0" rotate="-23.2" strokeType="OUTSIDE" strokeWidth="0.0" text="Advertisement">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="222.0" prefWidth="479.0" />
+               </children>
+            </HBox>
+            <Text layoutX="399.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Information about the selected game, perhaps a quick summary of the rules and whatnot" wrappingWidth="255.5732421875" />
+         </children>
+      </Pane>
+      <Pane maxHeight="100.0" prefHeight="95.0" prefWidth="600.0">
+         <children>
+            <HBox layoutX="24.0" layoutY="17.0" maxHeight="100.0" prefHeight="100.0" prefWidth="748.0">
+               <children>
+                  <Pane maxHeight="100.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button alignment="CENTER" maxHeight="100.0" minWidth="-Infinity" mnemonicParsing="false" prefWidth="100.0" text="SP" />
+                     </children>
+                  </Pane>
+                  <Pane maxHeight="100.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button alignment="CENTER" maxHeight="100.0" minWidth="-Infinity" mnemonicParsing="false" prefWidth="100.0" text="P Quick" />
+                     </children>
+                  </Pane>
+                  <Pane maxHeight="100.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button alignment="CENTER" maxHeight="100.0" minWidth="-Infinity" mnemonicParsing="false" prefWidth="100.0" text="P Tour" />
+                     </children>
+                  </Pane>
+                  <Pane maxHeight="100.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button alignment="CENTER" maxHeight="100.0" minWidth="-Infinity" mnemonicParsing="false" prefWidth="100.0" text="Spectate" />
+                     </children>
+                  </Pane>
+                  <Pane maxHeight="100.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button alignment="CENTER" maxHeight="100.0" minWidth="-Infinity" mnemonicParsing="false" prefWidth="100.0" text="Quit" />
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+   </children>
+</VBox>

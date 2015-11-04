@@ -1,0 +1,43 @@
+Button {
+    -fx-background-insets: 0,0,0;
+    -fx-background-radius: 0,0;
+    -fx-border-width: 0;
+    -fx-color: #e04020;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+}
+
+CheckBox {
+    -fx-text-fill: #cccccc;
+}
+
+Label {
+    -fx-text-fill: #cccccc;
+}
+
+TextField {
+    -fx-background-radius: 0,0;
+    -fx-control-inner-background: #303030;
+    -fx-text-box-border: #909090;
+}
+Text {
+    -fx-fill: #e0e0e0;
+}
+Button {
+    -fx-background-insets: 0,0,0;
+    -fx-background-radius: 0,0;
+    -fx-border-width: 0;
+    -fx-color: #e04020;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+}
+
+CheckBox {
+    -fx-text-fill: #cccccc;
+}
+Label {
+    -fx-text-fill: #cccccc;
+}
+.root {
+    -fx-background: #202020;
+}

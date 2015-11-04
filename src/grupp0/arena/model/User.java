@@ -24,17 +24,17 @@ public abstract class User {
 /**
  * The username.
  */
-private final String name;
+private String name;
 
 /**
  * The password.
  */
-private final String password;
+private String password;
 
 /**
  * The user's real name.
  */
-private final String realName;
+private String realName;
 
 /*------------------------------------------------
  * PUBLIC METHODS

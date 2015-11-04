@@ -4,7 +4,7 @@ package grupp0.arena.controller;
  * IMPORTS
  *----------------------------------------------*/
 
-import grupp0.arena.view.LobbyWindow;
+import grupp0.arena.view.LoginWindow;
 
 /*------------------------------------------------
  * CLASS
@@ -27,7 +27,7 @@ public class Client {
  * @param args The program arguments.
  */
 public void run(String[] args) {
-    new LobbyWindow().showAndWait();
+    new LoginWindow().showAndWait();
 }
 
 }

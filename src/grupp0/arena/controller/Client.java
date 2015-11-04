@@ -5,6 +5,7 @@ package grupp0.arena.controller;
  *----------------------------------------------*/
 
 import grupp0.arena.view.LobbyWindow;
+import grupp0.arena.view.SplashWindow;
 
 /*------------------------------------------------
  * CLASS
@@ -27,6 +28,7 @@ public class Client {
  * @param args The program arguments.
  */
 public void run(String[] args) {
+    new SplashWindow().showAndWait();
     new LobbyWindow().showAndWait();
 }
 

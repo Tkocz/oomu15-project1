@@ -21,7 +21,7 @@ TextField {
     -fx-text-box-border: #909090;
 }
 Text {
-    -fx-fill: #e0e0e0;
+    -fx-fill: #a0a0a0;
 }
 Button {
     -fx-background-insets: 0,0,0;

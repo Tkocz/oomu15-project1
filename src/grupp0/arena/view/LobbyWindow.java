@@ -4,6 +4,7 @@ import javafx.fxml.FXMLLoader;
 import java.io.IOException;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 
 public class LobbyWindow extends Stage{
 
@@ -17,6 +18,9 @@ public class LobbyWindow extends Stage{
 
         try {
             setScene(new Scene(fxml.load()));
+            setResizable(false);
+            setTitle("asyar14h/oomu/Projekt - grupp 0");
+            //getIcons().add(new Image("images/reversi.png")); Ikon för ARENA
         }
         catch (IOException e) {
             e.printStackTrace();

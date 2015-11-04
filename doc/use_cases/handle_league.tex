@@ -16,15 +16,23 @@
                                           därigenom blivit en
                                           ``LeagueOwner.''}       \\
         \textbf{Postcondition}  & \textit{Ligan har modifierats.} \\
-        \textbf{Scenario}       & \textit{En spelare (LeagueOwner) vill ändra
-                                          något i sin liga under ligans gång.
-                                          $\rightarrow$ Spelaren loggar in på
-                                          systemet och väljer att hantera sin
-                                          liga. Spelaren ändrar inställningar
-                                          för ligan genom att: ta bort spelare,
-                                          byta namn på ligan, avsluta och ta
-                                          bort ligan. }           \\
-        \textbf{Extension(s)}   & \textit{q}                      \\
+        \textbf{Scenario}       &
+            \begin{enumerate}
+                \item \textit{En spelare (LeagueOwner) vill ändra något i sin
+                              liga.}
+                \item \textit{Spelaren väljer att hantera sin liga.}
+                \item \textit{Systemet visar ligans inställningar.}
+                \item \textit{Spelaren ändrar inställningar för ligan.}
+                \item \textit{Systemet lagrar de nya inställningarna för ligan.}
+            \end{enumerate}                                       \\
+        \textbf{Extension(s)}   &
+            \begin{enumerate}
+            \setcounter{enumi}{1}
+                \item \textit{Spelaren avbryter hanteringen.}
+                    \begin{enumerate}
+                        \item \textit{De ursprungloga inställningarna behålls.}
+                    \end{enumerate}
+            \end{enumerate}                                       \\
         \textbf{Open issues}    & \textit{Hur notera deltaganade spelare vid
                                           borttagning av liga?}   \\
         \textbf{Referenced by}  & \textit{}

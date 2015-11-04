@@ -4,7 +4,6 @@ package grupp0.arena.controller;
  * IMPORTS
  *----------------------------------------------*/
 
-import grupp0.arena.view.LoginWindow;
 import grupp0.arena.view.LobbyWindow;
 
 /*------------------------------------------------

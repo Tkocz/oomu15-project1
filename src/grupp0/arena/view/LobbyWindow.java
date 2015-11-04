@@ -7,9 +7,9 @@ import javafx.stage.Stage;
 public class LobbyWindow extends Stage{
     
     public LobbyWindow(){
-        String     className = getClass().getSimpleName();
-        String     viewName  = "/fxml" +className + ".fxml";
-        FXMLLoader fxml      = new FXMLLoader(getClass().getResource(viewName));
+        //String     className = getClass().getSimpleName();
+        //String     viewName  = "/fxml/" +className + ".fxml";
+        FXMLLoader fxml      = new FXMLLoader(getClass().getResource("@/fxml/LobbyWindow.fxml"));
 
         fxml.setController(this);
 

@@ -58,4 +58,5 @@
          file (excepting the two lines below) is written by hand! :-) -->
     <target name="jfx-build" depends="jar" />
     <target name="jfxsa-run" depends="run" />
+    <target name="jfxsa-debug" depends="run" />
 </project>

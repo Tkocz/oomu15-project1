@@ -37,6 +37,9 @@ public class LoginWindow extends Stage{
         inputFields.setSpacing(8);
         
         Button ok = new Button("OK! Lets GO!");
+        ok.setOnAction(e -> {  this.close(); 
+                                    new LobbyWindow ().showAndWait();
+                                });
         Button cancel = new Button("FAK DIZ SHIET!");
         
         HBox btns = new HBox();

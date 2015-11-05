@@ -5,6 +5,7 @@ package grupp0.arena.controller;
  *----------------------------------------------*/
 
 import grupp0.arena.view.LobbyWindow;
+import grupp0.arena.view.LoginWindow;
 import grupp0.arena.view.SplashWindow;
 
 /*------------------------------------------------
@@ -29,7 +30,7 @@ public class Client {
  */
 public void run(String[] args) {
     new SplashWindow().showAndWait();
-    new LobbyWindow ().showAndWait();
+    new LoginWindow ().showAndWait();
 }
 
 }

@@ -37,25 +37,7 @@
         <java jar="${jar-dir}/${jar-name}" fork="true" />
     </target>
 
-    <target name="run-client" depends="jar">
-        <java jar="${jar-dir}/${jar-name}" fork="true">
-            <arg value="--name" />
-            <arg value="Philster" />
-            <arg value="--host" />
-            <arg value="loopback" />
-            <arg value="--port" />
-            <arg value="1337" />
-        </java>
-    </target>
-
-    <target name="run-server" depends="jar">
-        <java jar="${jar-dir}/${jar-name}" fork="true">
-            <arg value="--server" />
-        </java>
-    </target>
-
-    <!-- NetBeans sux. lol! ant ftw. Yes, this means that this beautiful build
-         file (excepting the two lines below) is written by hand! :-) -->
+    <!-- NetBeans sux. -->
     <target name="jfx-build" depends="jar" />
     <target name="jfxsa-run" depends="run" />
     <target name="jfxsa-debug" depends="run" />

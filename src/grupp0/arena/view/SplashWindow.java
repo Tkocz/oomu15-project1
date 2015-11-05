@@ -4,9 +4,6 @@ package grupp0.arena.view;
  * IMPORTS
  *----------------------------------------------*/
 
-import java.util.Timer;
-import java.util.TimerTask;
-
 import javafx.application.Platform;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -27,36 +24,52 @@ import javafx.stage.StageStyle;
 public class SplashWindow extends Stage {
 
 /*------------------------------------------------
- * FIELDS
- *----------------------------------------------*/
-
-/**
- * The timer used to close the splash screen window.
- */
-private Timer timer;
-
-/*------------------------------------------------
  * PUBLIC METHODS
  *----------------------------------------------*/
 
+/**
+ * Constructor.
+ */
 public SplashWindow() {
+    Image     splashImage = new Image    ("/images/splash.png");
+    ImageView imageView   = new ImageView(splashImage         );
+    Group     root        = new Group    (imageView           );
+    Scene     scene       = new Scene    (root                );
+
+    // Remove window decorations and show the splash screen image! :-)
     initStyle(StageStyle.UNDECORATED);
+    setScene (scene);
+}
 
-    Image splashImage = new Image("/images/splash.png");
+/**
+ * Displays the splash window for two seconds.
+ */
+@Override
+public void showAndWait() {
+    setTimeout(() -> close(), 2000);
+    super.showAndWait();
+}
 
-    ImageView imageView = new ImageView();
+/*------------------------------------------------
+ * PRIVATE METHODS
+ *----------------------------------------------*/
 
-    imageView.setImage(splashImage);
-
-    setScene(new Scene(new Group(imageView)));
-
-    timer = new Timer("SplashTimer");
-
-    timer.schedule(new TimerTask() {
-        public void run() {
-            Platform.runLater(() -> close());
+/**
+ * Sets a callback to be executed in the specified amount of time.
+ *
+ * @param runnable       The runnable to run after the timeout.
+ * @param delayMillisecs The delay, in milliseconds, to wait before executing
+ *                       the runnable.
+ */
+private void setTimeout(Runnable runnable, int delayMillisecs) {
+    new Thread(() -> {
+        try {
+            Thread.sleep(delayMillisecs);
         }
-    }, 2000);
+        catch (InterruptedException ex) { /* ...*/ }
+
+        Platform.runLater(() -> runnable.run());
+    }).start();
 }
 
 }

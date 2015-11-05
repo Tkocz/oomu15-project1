@@ -29,7 +29,7 @@ public class Client {
  */
 public void run(String[] args) {
     new SplashWindow().showAndWait();
-    new LobbyWindow().showAndWait();
+    new LobbyWindow() .showAndWait();
 }
 
 }

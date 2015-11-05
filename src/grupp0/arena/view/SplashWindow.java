@@ -66,7 +66,7 @@ private void setTimeout(Runnable runnable, int delayMillisecs) {
         try {
             Thread.sleep(delayMillisecs);
         }
-        catch (InterruptedException ex) { /* ...*/ }
+        catch (InterruptedException ex) { /* ... */ }
 
         Platform.runLater(() -> runnable.run());
     }).start();

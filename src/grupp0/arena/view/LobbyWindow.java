@@ -9,8 +9,6 @@ import javafx.scene.image.Image;
 public class LobbyWindow extends Stage{
 
     public LobbyWindow(){
-        //String     className = getClass().getSimpleName();
-        //String     viewName  = "/fxml/" +className + ".fxml";
 
         FXMLLoader fxml      = new FXMLLoader(getClass().getResource("/fxml/LobbyWindow.fxml"));
 

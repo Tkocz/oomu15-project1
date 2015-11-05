@@ -5,6 +5,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -13,6 +14,11 @@ import javafx.stage.Stage;
 
 public class LoginWindow extends Stage{
     public LoginWindow(){
+        
+        setResizable(false);
+        setTitle("Login A.R.E.N.A");
+        getIcons().add(new Image("images/icon.png"));
+            
         BorderPane pane = new BorderPane();
         HBox hboxUser = new HBox();
         HBox hboxPass = new HBox();
@@ -36,12 +42,14 @@ public class LoginWindow extends Stage{
         inputFields.setAlignment(Pos.CENTER);
         inputFields.setSpacing(8);
         
-        Button ok = new Button("OK! Lets GO!");
+        Button ok = new Button("Login");
         ok.setOnAction(e -> {  this.close(); 
                                     new LobbyWindow ().showAndWait();
                                 });
-        Button cancel = new Button("FAK DIZ SHIET!");
-        
+        Button cancel = new Button("Cancel");
+        cancel.setOnAction(e -> {  this.close();
+                                   System.exit(1);
+                                });
         HBox btns = new HBox();
         btns.getChildren().addAll(ok,cancel);
         btns.setAlignment(Pos.BASELINE_RIGHT);

@@ -47,8 +47,7 @@ public class LoginWindow extends Stage{
                                     new LobbyWindow ().showAndWait();
                                 });
         Button cancel = new Button("Cancel");
-        cancel.setOnAction(e -> {  this.close();
-                                   System.exit(1);
+        cancel.setOnAction(e -> {  System.exit(1);
                                 });
         HBox btns = new HBox();
         btns.getChildren().addAll(ok,cancel);

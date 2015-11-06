@@ -14,36 +14,36 @@ import javafx.stage.Stage;
 
 public class LoginWindow extends Stage{
     public LoginWindow(){
-        
+
         setResizable(false);
         setTitle("Login A.R.E.N.A");
         getIcons().add(new Image("images/icon.png"));
-            
+
         BorderPane pane = new BorderPane();
         HBox hboxUser = new HBox();
         HBox hboxPass = new HBox();
         VBox inputFields = new VBox();
-        
+
         Text userName = new Text("Username:");
         TextField inputUser = new TextField();
-        
+
         Text password = new Text("Password:");
         TextField inputPass = new TextField();
-        
+
         hboxUser.getChildren().addAll(userName, inputUser);
         hboxPass.getChildren().addAll(password,inputPass);
         inputFields.getChildren().addAll(hboxUser,hboxPass);
-        
+
         hboxUser.setAlignment(Pos.CENTER);
         hboxUser.setSpacing(20);
         hboxPass.setAlignment(Pos.CENTER);
-        hboxPass.setSpacing(20);
-        
+        hboxPass.setSpacing(24);
+
         inputFields.setAlignment(Pos.CENTER);
         inputFields.setSpacing(8);
-        
+
         Button ok = new Button("Login");
-        ok.setOnAction(e -> {  this.close(); 
+        ok.setOnAction(e -> {  this.close();
                                     new LobbyWindow ().showAndWait();
                                 });
         Button cancel = new Button("Cancel");
@@ -54,17 +54,18 @@ public class LoginWindow extends Stage{
         btns.setAlignment(Pos.BASELINE_RIGHT);
         btns.setSpacing(10);
         btns.setPadding(new Insets(2,10,15,2));
- 
-        
+
+
         inputFields.getChildren().add(btns);
-        
+
         pane.setCenter(inputFields);
         pane.setBottom(btns);
 
-        
-        
-        Scene scene = new Scene(pane, 400, 175);
+
+
+        Scene scene = new Scene(pane, 340, 145);
+        scene.getStylesheets().add(LoginWindow.class.getResource("/stylesheets/darktheme.css").toExternalForm());
         setScene(scene);
-        
+
     }
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.geometry.*?>
@@ -49,7 +50,7 @@
                      <children>
                         <ImageView fitHeight="222.0" fitWidth="298.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="images/Double_facepalm.jpg" />
+                              <Image url="images/ad_fra.jpg" />
                            </image>
                         </ImageView>
                         <Text fill="#f2ebeb" layoutX="60.0" layoutY="121.0" rotate="-23.2" strokeType="OUTSIDE" strokeWidth="0.0" text="Advertisement">

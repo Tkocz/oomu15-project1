@@ -20,6 +20,9 @@ TextField {
     -fx-control-inner-background: #303030;
     -fx-text-box-border: #909090;
 }
+Label {
+    -fx-fill: #a0a0a0;
+}
 Text {
     -fx-fill: #a0a0a0;
 }
@@ -43,6 +46,6 @@ Pane{
 }
 .root {
     -fx-background: #202020;
-    -fx-border-width: 5;
+    -fx-border-width: 0;
     -fx-border-color: #e0e0e0;
 }

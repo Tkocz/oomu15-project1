@@ -15,7 +15,7 @@ Label {
     -fx-text-fill: #cccccc;
 }
 
-TextField {
+TextField, PasswordField {
     -fx-background-radius: 0,0;
     -fx-control-inner-background: #303030;
     -fx-text-box-border: #909090;
@@ -42,7 +42,7 @@ Label {
 }
 Pane{
     -fx-border-width: 0;
-    -fx-border-color: #e0e0e0;    
+    -fx-border-color: #e0e0e0;
 }
 .root {
     -fx-background: #202020;

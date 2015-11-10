@@ -4,6 +4,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
@@ -28,7 +29,7 @@ public class LoginWindow extends Stage{
         TextField inputUser = new TextField();
 
         Text password = new Text("Password:");
-        TextField inputPass = new TextField();
+        PasswordField inputPass = new PasswordField();
 
         hboxUser.getChildren().addAll(userName, inputUser);
         hboxPass.getChildren().addAll(password,inputPass);

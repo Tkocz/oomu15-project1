@@ -30,11 +30,17 @@ public class Client {
  */
 private static final Client instance = new Client();
 
+private Database database = new DatabaseManager();
+
 private User loggedInUser;
 
 /*------------------------------------------------
  * PUBLIC METHODS
  *----------------------------------------------*/
+
+public DatabaseManager getDatabase() {
+    return (database);
+}
 
 /**
  * Gets the client instance.

@@ -20,7 +20,7 @@ public class DatabaseManager {
         Player temp = new Player();
         temp.setName("player");
         temp.setPassword("player");
-        users.add(new Player());
+        users.add(temp);
         //users.add(new Operator());
         //users.add(new Advertiser());
     }
@@ -31,9 +31,9 @@ public class DatabaseManager {
      * @return User if it exists else null.
      */
     public User getUser(String name){
-        int index;
+        if (name == null) return null;
         for(User u : users)
-            if(u.getName().equals(name))
+            if(u != null && u.getName().equals(name))
                 return u;
         
         return null;
@@ -48,11 +48,11 @@ public class DatabaseManager {
      */
     public User loginUser(String name, String password){
         User temp = getUser(name);
-        
-        //if(temp.password == password)//Kolla om password stämmer innan det returneras
+        if(temp == null) return null;
+        if(temp.getPassword().equals(password))//Kolla om password stämmer innan det returneras
             return temp;
-        //else
-            //return null;
+        else
+            return null;
     }
     
     public ArrayList getUsers(){

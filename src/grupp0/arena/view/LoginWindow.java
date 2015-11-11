@@ -1,5 +1,7 @@
 package grupp0.arena.view;
 
+import grupp0.arena.controller.Client;
+import grupp0.arena.model.User;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -13,9 +15,9 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class LoginWindow extends AppWindow{
+public class LoginWindow extends Stage{
     public LoginWindow(){
-
+        
         setResizable(false);
         setTitle("Login A.R.E.N.A");
         getIcons().add(new Image("images/icon.png"));
@@ -44,9 +46,15 @@ public class LoginWindow extends AppWindow{
         inputFields.setSpacing(8);
 
         Button ok = new Button("Login");
-        ok.setOnAction(e -> {  this.close();
-                                    new LobbyWindow ().showAndWait();
-                                });
+        ok.setOnAction(e -> {  
+        if(Client.getInstance().getDatabase().loginUser(inputUser.getText(), inputPass.getText()) != null){
+            Client.getInstance().setLoggedInUser(Client.getInstance().getDatabase().loginUser(inputUser.getText(), inputPass.getText()));
+            this.close();
+            new LobbyWindow ().showAndWait();
+        }
+        else
+            MessageBox.show("Fel användarnamn/Lösenord, gör om gör rätt!", "Inloggning Misslyckad!");
+         });
         Button cancel = new Button("Cancel");
         cancel.setOnAction(e -> {  System.exit(1);
                                 });
@@ -55,6 +63,7 @@ public class LoginWindow extends AppWindow{
         btns.setAlignment(Pos.BASELINE_RIGHT);
         btns.setSpacing(10);
         btns.setPadding(new Insets(2,10,15,2));
+        ok.setDefaultButton(true);
 
 
         inputFields.getChildren().add(btns);

@@ -30,6 +30,8 @@ public class MessageBox extends AppWindow {
  * Constructor.
  */
 public MessageBox(String message, String title) {
+    // @To-do: Kasta den här sugiga skitkoden och gör något vettigt.
+
     HBox root = new HBox();
 
     root.getChildren().add(new Text(message));

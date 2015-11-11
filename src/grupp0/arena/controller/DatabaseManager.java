@@ -30,13 +30,12 @@ public class DatabaseManager {
         temp2.setPassword("operator");
         users.add(temp2);
 
-        games.add(new GameInfo("Othello", "The best Othello game ever made",
-                "https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/package_games.png"));
-        games.add(new GameInfo("Counter-Strike", "",
-                "http://royce.kimmons.me/images/cs.png"));
-        games.add(new GameInfo("World Of Warcraft", "",
-                "http://royce.kimmons.me/images/cs.png"));
-
+games.add(new GameInfo("Othello", "The best Othello game ever made",
+               "https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/package_games.png"));
+       games.add(new GameInfo("Counter-Strike", "",
+               "https://cdn2.iconfinder.com/data/icons/perqui/48/cs.png"));
+       games.add(new GameInfo("World Of Warcraft", "",
+               "http://img3.wikia.nocookie.net/__cb20080327190257/wowwiki/images/thumb/d/d3/Wow-icon-scalable.svg/48px-Wow-icon-scalable.svg.png"));
 
         //users.add(new Operator());
         //users.add(new Advertiser());

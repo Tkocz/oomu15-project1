@@ -2,6 +2,7 @@ package grupp0.arena.view;
 
 import grupp0.arena.controller.Client;
 import grupp0.arena.model.User;
+import grupp0.arena.model.UserType;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -47,14 +48,18 @@ public class LoginWindow extends Stage{
 
         Button ok = new Button("Login");
         ok.setOnAction(e -> {  
-        if(Client.getInstance().getDatabase().loginUser(inputUser.getText(), inputPass.getText()) != null){
-            Client.getInstance().setLoggedInUser(Client.getInstance().getDatabase().loginUser(inputUser.getText(), inputPass.getText()));
-            this.close();
-            new LobbyWindow ().showAndWait();
-        }
-        else
-            MessageBox.show("Fel användarnamn/Lösenord, gör om gör rätt!", "Inloggning Misslyckad!");
-         });
+           User temp = Client.getInstance().getDatabase().loginUser(inputUser.getText(), inputPass.getText());
+       if(temp != null){
+           Client.getInstance().setLoggedInUser(Client.getInstance().getDatabase().loginUser(inputUser.getText(), inputPass.getText()));
+           this.close();
+           if(temp.getType().equals(UserType.PLAYER))
+               new LobbyWindow ().showAndWait();
+           else if(temp.getType().equals(UserType.OPERATOR))
+               new OperatorLobbyWindow().showAndWait();
+       }
+       else
+           MessageBox.show("Fel användarnamn/Lösenord, gör om gör rätt!", "Inloggning Misslyckad!");
+        });
         Button cancel = new Button("Cancel");
         cancel.setOnAction(e -> {  System.exit(1);
                                 });

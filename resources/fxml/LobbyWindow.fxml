@@ -17,7 +17,7 @@
          <children>
             <HBox layoutX="23.0" layoutY="17.0" prefHeight="222.0" prefWidth="775.0">
                <children>
-                  <FlowPane fx:id="gameIcon" prefHeight="222.0" prefWidth="373.0">
+                  <FlowPane fx:id="gameIcons" prefHeight="222.0" prefWidth="373.0">
                      <children>
                         <Button fx:id="othelloButton" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Othello">
                            <effect>

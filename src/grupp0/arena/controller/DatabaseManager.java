@@ -23,10 +23,15 @@ public class DatabaseManager {
         temp.setName("player");
         temp.setPassword("player");
         users.add(temp);
-        
-        GameInfo tempGame =  new GameInfo("Othello", "The best Othello game ever made",
-                "https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/package_games.png");
-        games.add(tempGame);
+       
+        games.add(new GameInfo("Othello", "The best Othello game ever made",
+                "https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/package_games.png"));
+        games.add(new GameInfo("adjfkajsdfja", "",
+                "https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/package_games.png"));
+        games.add(new GameInfo("kadjflasdjfasldfjlad", "",
+                "https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/package_games.png"));
+        games.add(new GameInfo("asdkjfladjfoapdf", "",
+                "https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/package_games.png"));
         
         //users.add(new Operator());
         //users.add(new Advertiser());

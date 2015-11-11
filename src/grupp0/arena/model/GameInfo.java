@@ -14,12 +14,12 @@ public class GameInfo {
     private String name;
     private String description;
     private String imageUrl;
-    
+
     /**
      * Constructor for the GameInfo class
      * @param name is the parameter for the name of the game
      * @param description is the parameter containing the description of the game
-     * @param imageUrl is the parameter containing the url for an immage 
+     * @param imageUrl is the parameter containing the url for an immage
      * representing the game
      */
     public GameInfo(String name, String description, String imageUrl){
@@ -43,22 +43,22 @@ public class GameInfo {
     }
     /**
      * setUrl accessor method which makes it able to set the image url
-     * @param imgUrl is the parameter which represents the image url and needs 
+     * @param imgUrl is the parameter which represents the image url and needs
      * to be a string
      */
-    public void setUrl(String imgUrl){
+    public void setImageURL(String imgUrl){
         this.imageUrl = imgUrl;
     }
     /**
      * getUrl accessor method which makes it able to get the image url
      * @return a string which represents the image url.
      */
-    public String getUrl(){
+    public String getImageURL(){
         return(this.imageUrl);
     }
     /**
      * setDescription accessor method which makes it able to set the description of the game
-     * @param description is the parameter which is a sring and represents the 
+     * @param description is the parameter which is a sring and represents the
      * url for the image.
      */
     public void setDescription(String description){
@@ -72,5 +72,5 @@ public class GameInfo {
     public String getDescription(){
         return(this.description);
     }
-    
+
 }

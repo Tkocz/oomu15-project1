@@ -11,7 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 
-public class LobbyWindow extends Stage{
+public class LobbyWindow extends AppWindow{
 
  /**
  * Button for exiting the application.
@@ -42,7 +42,7 @@ private Label gameInfo;
  */
 @FXML
 private Label gameTournament;
-    
+
     public LobbyWindow(){
 
         FXMLLoader fxml= new FXMLLoader(getClass().getResource("/fxml/LobbyWindow.fxml"));
@@ -60,7 +60,7 @@ private Label gameTournament;
             e.printStackTrace();
         }
     }
-    
+
     private void setupHandlers() {
     quitButton.setOnAction(e -> close());
     othelloButton.setOnAction(e -> setTheText(othelloButton));
@@ -79,6 +79,6 @@ private Label gameTournament;
                     + " current player's color are turned over to the current"
                     + " player's color.\n The object of the game is to have the"
                     + " majority of disks turned to display your color when the"
-                    + " last playable empty square is filled.");*/ //Shit's not working. 
+                    + " last playable empty square is filled.");*/ //Shit's not working.
     }
 }

@@ -21,7 +21,7 @@ import javafx.stage.StageStyle;
  *
  * @author Philip Arvidsson (S133686)
  */
-public class SplashWindow extends Stage {
+public class SplashWindow extends AppWindow {
 
 /*------------------------------------------------
  * PUBLIC METHODS

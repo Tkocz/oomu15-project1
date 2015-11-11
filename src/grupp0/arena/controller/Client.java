@@ -4,11 +4,11 @@ package grupp0.arena.controller;
  * IMPORTS
  *----------------------------------------------*/
 
+import grupp0.arena.controller.DatabaseManager;
+import grupp0.arena.model.User;
 import grupp0.arena.view.LobbyWindow;
 import grupp0.arena.view.LoginWindow;
 import grupp0.arena.view.SplashWindow;
-
-import grupp0.arena.model.User;
 
 /*------------------------------------------------
  * CLASS
@@ -30,7 +30,7 @@ public class Client {
  */
 private static final Client instance = new Client();
 
-private Database database = new DatabaseManager();
+private DatabaseManager database = new DatabaseManager();
 
 private User loggedInUser;
 

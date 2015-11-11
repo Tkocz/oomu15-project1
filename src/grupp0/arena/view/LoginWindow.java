@@ -13,7 +13,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class LoginWindow extends Stage{
+public class LoginWindow extends AppWindow{
     public LoginWindow(){
 
         setResizable(false);

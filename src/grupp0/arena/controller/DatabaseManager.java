@@ -17,6 +17,9 @@ public class DatabaseManager {
     private ArrayList<User> users = new ArrayList();
 
     public DatabaseManager() {
+        Player temp = new Player();
+        temp.setName("player");
+        temp.setPassword("player");
         users.add(new Player());
         //users.add(new Operator());
         //users.add(new Advertiser());

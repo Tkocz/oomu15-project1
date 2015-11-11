@@ -5,13 +5,21 @@
  */
 package grupp0.arena.model;
 
+import grupp0.arena.model.UserType;
+
 /**
  *
  * @author Zzooki
  */
 public class Player extends User{
-    
-    public Player(){
-        
-    }
+
+public Player(){
+
+}
+
+@Override
+public UserType getType() {
+    return (UserType.PLAYER);
+}
+
 }

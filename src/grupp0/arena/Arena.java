@@ -36,7 +36,7 @@ public void start(Stage primaryStage) {
         primaryStage = null;
     }
 
-    new Client().run(getParameters().getRaw().toArray(new String[0]));
+    Client.getInstance().run(getParameters().getRaw().toArray(new String[0]));
 }
 
 /**

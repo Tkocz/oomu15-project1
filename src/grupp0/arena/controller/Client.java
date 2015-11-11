@@ -20,8 +20,26 @@ import grupp0.arena.view.SplashWindow;
 public class Client {
 
 /*------------------------------------------------
+ * FIELDS
+ *----------------------------------------------*/
+
+/**
+ * The client instance.
+ */
+private static final Client instance = new Client();
+
+/*------------------------------------------------
  * PUBLIC METHODS
  *----------------------------------------------*/
+
+/**
+ * Gets the client instance.
+ *
+ * @return The client instance.
+ */
+public static Client getInstance() {
+    return (instance);
+}
 
 /**
  * Runs the client.
@@ -31,6 +49,17 @@ public class Client {
 public void run(String[] args) {
     new SplashWindow().showAndWait();
     new LoginWindow ().showAndWait();
+}
+
+/*------------------------------------------------
+ * PRIVATE METHODS
+ *----------------------------------------------*/
+
+/**
+ * Private constructor.
+ */
+private Client() {
+    /* ... */
 }
 
 }

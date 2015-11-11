@@ -4,7 +4,7 @@ package grupp0.arena.model;
  * IMPORTS
  *----------------------------------------------*/
 
-//import grupp0.arena.view.LoginWindow;
+import grupp0.arena.model.UserType;
 
 /*------------------------------------------------
  * CLASS
@@ -99,6 +99,6 @@ public void setRealName(String value) {
  *
  * @return The user type.
  */
-public abstract String getType();
+public abstract UserType getType();
 
 }

@@ -14,6 +14,7 @@ public class GameInfo {
     private String name;
     private String description;
     private String imageUrl;
+    private String exePath = null;
 
     /**
      * Constructor for the GameInfo class
@@ -46,14 +47,14 @@ public class GameInfo {
      * @param imgUrl is the parameter which represents the image url and needs
      * to be a string
      */
-    public void setImageURL(String imgUrl){
+    public void setUrl(String imgUrl){
         this.imageUrl = imgUrl;
     }
     /**
      * getUrl accessor method which makes it able to get the image url
      * @return a string which represents the image url.
      */
-    public String getImageURL(){
+    public String getUrl(){
         return(this.imageUrl);
     }
     /**
@@ -71,6 +72,22 @@ public class GameInfo {
      */
     public String getDescription(){
         return(this.description);
+    }
+
+    /**
+     * This function sets the exepath to the game.
+     * @param value
+     */
+    public void setExePath(String value){
+        this.exePath = value;
+    }
+
+    /**
+     * This functions gets the exepath to the game.
+     * @return
+     */
+    public String getExePath(){
+        return this.exePath;
     }
 
 }

@@ -8,6 +8,8 @@ import grupp0.arena.view.LobbyWindow;
 import grupp0.arena.view.LoginWindow;
 import grupp0.arena.view.SplashWindow;
 
+import grupp0.arena.model.User;
+
 /*------------------------------------------------
  * CLASS
  *----------------------------------------------*/
@@ -28,6 +30,8 @@ public class Client {
  */
 private static final Client instance = new Client();
 
+private User loggedInUser;
+
 /*------------------------------------------------
  * PUBLIC METHODS
  *----------------------------------------------*/
@@ -39,6 +43,25 @@ private static final Client instance = new Client();
  */
 public static Client getInstance() {
     return (instance);
+}
+
+/**
+ * Gets the logged in user.
+ *
+ * @return The currently logged in user, or null if the user has not logged in
+ *         yet.
+ */
+public User getLoggedInUser() {
+    return (loggedInUser);
+}
+
+/**
+ * Sets the logged in user.
+ *
+ * @param value The user that logged in, or null if a logged in user logged out.
+ */
+public void setLoggedInUser(User value) {
+    loggedInUser = value;
 }
 
 /**

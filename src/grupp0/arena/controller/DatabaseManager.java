@@ -33,13 +33,7 @@ public class DatabaseManager {
     }
     
     public GameInfo[] getGames(){
-        GameInfo[] gamesList = null;
-        int i = 0;
-        for(GameInfo g : games){
-            gamesList[i] = g;
-            i++;
-        }
-        return gamesList;
+        return games.toArray(new GameInfo[0]);
     }
     
     /**

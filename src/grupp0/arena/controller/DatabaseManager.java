@@ -26,12 +26,11 @@ public class DatabaseManager {
        
         games.add(new GameInfo("Othello", "The best Othello game ever made",
                 "https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/package_games.png"));
-        games.add(new GameInfo("adjfkajsdfja", "",
-                "https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/package_games.png"));
-        games.add(new GameInfo("kadjflasdjfasldfjlad", "",
-                "https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/package_games.png"));
-        games.add(new GameInfo("asdkjfladjfoapdf", "",
-                "https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/package_games.png"));
+        games.add(new GameInfo("Counter-Strike", "",
+                "http://royce.kimmons.me/images/cs.png"));
+        games.add(new GameInfo("World Of Warcraft", "",
+                "http://royce.kimmons.me/images/cs.png"));
+       
         
         //users.add(new Operator());
         //users.add(new Advertiser());

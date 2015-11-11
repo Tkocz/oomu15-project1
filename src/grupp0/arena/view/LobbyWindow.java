@@ -9,28 +9,22 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
 
 public class LobbyWindow extends AppWindow{
 
  /**
- * Button for exiting the application.
+ * Pane for displaying Icons
+ */
+@FXML
+private FlowPane gameIcons;
+
+ /**
+ * Button for exiting the application
  */
 @FXML
 private Button quitButton;
-
- /**
- * Button for selecting Othello
- */
-@FXML
-private Button othelloButton;
-
- /**
- * Button for selecting TicTacToe
- */
-@FXML
-private Button ticTacToeButton;
-
  /**
  * Textfield for info about selected game
  */
@@ -63,8 +57,6 @@ private Label gameTournament;
 
     private void setupHandlers() {
     quitButton.setOnAction(e -> close());
-    othelloButton.setOnAction(e -> setTheText(othelloButton));
-    ticTacToeButton.setOnAction(e -> setTheText(ticTacToeButton));
     }
     private void setTheText(Button button){
         /*gameInfo.setText(

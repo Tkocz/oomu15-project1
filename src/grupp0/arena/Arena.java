@@ -31,6 +31,7 @@ public class Arena extends Application {
  */
 @Override
 public void start(Stage primaryStage) {
+    // We don't need this crap stage. lol!
     if (primaryStage != null) {
         primaryStage.close();
         primaryStage = null;

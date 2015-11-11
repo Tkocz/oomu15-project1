@@ -5,6 +5,7 @@
  */
 package grupp0.arena.controller;
 
+import grupp0.arena.model.GameInfo;
 import grupp0.arena.model.Player;
 import grupp0.arena.model.User;
 import java.util.ArrayList;
@@ -15,14 +16,30 @@ import java.util.ArrayList;
  */
 public class DatabaseManager {
     private ArrayList<User> users = new ArrayList();
+    private ArrayList<GameInfo> games = new ArrayList();
 
     public DatabaseManager() {
         Player temp = new Player();
         temp.setName("player");
         temp.setPassword("player");
         users.add(temp);
+        
+        GameInfo tempGame =  new GameInfo("Othello", "The best Othello game ever made",
+                "https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/package_games.png");
+        games.add(tempGame);
+        
         //users.add(new Operator());
         //users.add(new Advertiser());
+    }
+    
+    public GameInfo[] getGames(){
+        GameInfo[] gamesList = null;
+        int i = 0;
+        for(GameInfo g : games){
+            gamesList[i] = g;
+            i++;
+        }
+        return gamesList;
     }
     
     /**

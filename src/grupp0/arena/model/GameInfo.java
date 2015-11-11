@@ -22,7 +22,7 @@ public class GameInfo {
      * @param imageUrl is the parameter containing the url for an immage 
      * representing the game
      */
-    GameInfo(String name, String description, String imageUrl){
+    public GameInfo(String name, String description, String imageUrl){
         this.name = name;
         this.description = description;
         this.imageUrl = imageUrl;

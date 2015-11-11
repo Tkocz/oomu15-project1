@@ -3,6 +3,7 @@ package grupp0.arena.view;
 import grupp0.arena.controller.Client;
 import grupp0.arena.model.User;
 import grupp0.arena.model.UserType;
+import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -52,10 +53,12 @@ public class LoginWindow extends Stage{
        if(temp != null){
            Client.getInstance().setLoggedInUser(Client.getInstance().getDatabase().loginUser(inputUser.getText(), inputPass.getText()));
            this.close();
-           if(temp.getType().equals(UserType.PLAYER))
-               new LobbyWindow ().showAndWait();
-           else if(temp.getType().equals(UserType.OPERATOR))
-               new OperatorLobbyWindow().showAndWait();
+           if(temp.getType().equals(UserType.PLAYER)){
+               Platform.runLater(() -> new LobbyWindow ().showAndWait());
+           }
+           else if(temp.getType().equals(UserType.OPERATOR)){
+               Platform.runLater(() -> new OperatorLobbyWindow().showAndWait());
+           }
        }
        else
            MessageBox.show("Fel användarnamn/Lösenord, gör om gör rätt!", "Inloggning Misslyckad!");

@@ -47,14 +47,14 @@ public class GameInfo {
      * @param imgUrl is the parameter which represents the image url and needs
      * to be a string
      */
-    public void setUrl(String imgUrl){
+    public void setImageURL(String imgUrl){
         this.imageUrl = imgUrl;
     }
     /**
      * getUrl accessor method which makes it able to get the image url
      * @return a string which represents the image url.
      */
-    public String getUrl(){
+    public String getImageURL(){
         return(this.imageUrl);
     }
     /**

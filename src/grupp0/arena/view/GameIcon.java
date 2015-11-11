@@ -42,6 +42,9 @@ public GameIcon(GameInfo gameInfo) {
     icon = new ImageView(new Image(gameInfo.getImageURL()));
     name = new Text(gameInfo.getName());
 
+    icon.setFitWidth(48);
+    icon.setFitHeight(48);
+
     getChildren().add(icon);
     getChildren().add(name);
 }

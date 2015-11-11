@@ -4,6 +4,7 @@ package grupp0.arena.controller;
  * IMPORTS
  *----------------------------------------------*/
 
+import grupp0.arena.model.Operator;
 import grupp0.arena.model.Player;
 import grupp0.arena.model.User;
 import grupp0.arena.model.UserType;
@@ -34,7 +35,8 @@ public class UserFactory {
 public User createUser(UserType type) {
     switch (type) {
 
-    case PLAYER: return new Player();
+    case OPERATOR: return new Operator();
+    case PLAYER  : return new Player  ();
 
     }
 

@@ -29,14 +29,20 @@ public class DatabaseManager {
      */
     public User getUser(String name){
         int index;
-        index = users.indexOf(name);
+        for(User u : users)
+            if(u.getName().equals(name))
+                return u;
         
-        if(index == -1)
-            return null;
-        else
-            return users.get(index);
+        return null;
     }
     
+    /**
+     * validates a login. If the login-credentials is valid the user will be 
+     * returned. If a login is invalid null will be returned. 
+     * @param name
+     * @param password
+     * @return Correct login returns user and an incorrect login returns null.
+     */
     public User loginUser(String name, String password){
         User temp = getUser(name);
         

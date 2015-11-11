@@ -94,4 +94,11 @@ public void setRealName(String value) {
     realName = value;
 }
 
+/**
+ * Gets the user type.
+ *
+ * @return The user type.
+ */
+public abstract String getType();
+
 }

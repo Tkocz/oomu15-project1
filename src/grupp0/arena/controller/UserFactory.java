@@ -27,6 +27,9 @@ public class UserFactory {
  * Runs the client.
  *
  * @param args The program arguments.
+ *
+ * @return A user of the specified type, or null if an object couldn't be
+ *         created.
  */
 public User createUser(UserType type) {
     switch (type) {

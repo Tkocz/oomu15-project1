@@ -7,6 +7,7 @@ package grupp0.arena.controller;
 
 import grupp0.arena.model.GameInfo;
 import grupp0.arena.model.Player;
+import grupp0.arena.model.Operator;
 import grupp0.arena.model.User;
 import java.util.ArrayList;
 
@@ -23,23 +24,28 @@ public class DatabaseManager {
         temp.setName("player");
         temp.setPassword("player");
         users.add(temp);
-       
+
+        Operator temp2 = new Operator();
+        temp2.setName("operator");
+        temp2.setPassword("operator");
+        users.add(temp2);
+
         games.add(new GameInfo("Othello", "The best Othello game ever made",
                 "https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/package_games.png"));
         games.add(new GameInfo("Counter-Strike", "",
                 "http://royce.kimmons.me/images/cs.png"));
         games.add(new GameInfo("World Of Warcraft", "",
                 "http://royce.kimmons.me/images/cs.png"));
-       
-        
+
+
         //users.add(new Operator());
         //users.add(new Advertiser());
     }
-    
+
     public GameInfo[] getGames(){
         return games.toArray(new GameInfo[0]);
     }
-    
+
     /**
      * returns a use, if the user don't exists null will be returned.
      * @param name
@@ -50,13 +56,13 @@ public class DatabaseManager {
         for(User u : users)
             if(u != null && u.getName().equals(name))
                 return u;
-        
+
         return null;
     }
-    
+
     /**
-     * validates a login. If the login-credentials is valid the user will be 
-     * returned. If a login is invalid null will be returned. 
+     * validates a login. If the login-credentials is valid the user will be
+     * returned. If a login is invalid null will be returned.
      * @param name
      * @param password
      * @return Correct login returns user and an incorrect login returns null.
@@ -69,7 +75,7 @@ public class DatabaseManager {
         else
             return null;
     }
-    
+
     public ArrayList getUsers(){
         return users;
     }

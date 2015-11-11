@@ -4,6 +4,7 @@ package grupp0.arena.view;
  * IMPORTS
  *----------------------------------------------*/
 
+import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.Scene;
 import javafx.scene.text.Text;
@@ -32,6 +33,12 @@ public MessageBox(String message, String title) {
     HBox root = new HBox();
 
     root.getChildren().add(new Text(message));
+
+    Button okButton = new Button("OK");
+    okButton.setDefaultButton(true);
+    okButton.setOnAction((e) -> close());
+
+    root.getChildren().add(okButton);
 
     Scene scene = new Scene(root);
 

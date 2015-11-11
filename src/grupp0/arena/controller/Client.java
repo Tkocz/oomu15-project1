@@ -30,14 +30,19 @@ public class Client {
  */
 private static final Client instance = new Client();
 
+// @To-do: Replace this shit with a network interface.
 private DatabaseManager database = new DatabaseManager();
 
+/**
+ * The logged in user.
+ */
 private User loggedInUser;
 
 /*------------------------------------------------
  * PUBLIC METHODS
  *----------------------------------------------*/
 
+// @To-do: Replace this shit with a network interface.
 public DatabaseManager getDatabase() {
     return (database);
 }
@@ -76,6 +81,7 @@ public void setLoggedInUser(User value) {
  * @param args The program arguments.
  */
 public void run(String[] args) {
+    // @To-do: Connect to server while we show the splash screen?
     new SplashWindow().showAndWait();
     new LoginWindow ().showAndWait();
 }

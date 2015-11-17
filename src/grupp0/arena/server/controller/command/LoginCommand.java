@@ -25,9 +25,9 @@ public void perform() {
     User user = Server.getInstance().getDatabase().loginUser(username, password);
     
     if(user == null)
-        sendCommand(new LoginFailCommand());
+        getConnection().sendCommand(new LoginFailCommand());
     else
-        sendCommand(new LoginOKCommand());
+        getConnection().sendCommand(new LoginOKCommand());
         
 }
 

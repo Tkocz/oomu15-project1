@@ -45,10 +45,6 @@ public void setSocket(Socket value) {
     socket = value;
 }
 
-public void send(ServerNetworkCommand command) {
-    // Skicka iväg kommandohelvetet här.
-}
-
 @Override
 public void run() {
     while(!socket.isClosed()){
@@ -80,12 +76,13 @@ public void sendCommand(ServerNetworkCommand command){
 /**
  * interpret method is used to enable the client to access the server
  * by communicating by commands
- * @param s parameter which is a string and should contain an command and one or 
+ * @param s parameter which is a string and should contain an command and one or
  * multiple arguments
  * @return returns a object of a ServerNetworkCommand type
  */
     public ServerNetworkCommand interpret(String s) {
-        // Kan någon vara vänlig att implementera mig? Tack på förhand.
+        System.out.println("interpret " + s);
+
         Scanner scanner = new Scanner(s);
         ArrayList<String> arrListCommand = new ArrayList<>();
 
@@ -103,10 +100,10 @@ public void sendCommand(ServerNetworkCommand command){
 
         return(cmd);
     }
-    
+
     private ServerNetworkCommand createCommand(String arg) {
     //Denna metoden ska ta emot argumenten och så ska vi göra någonting roligt med dem :)
-    
+
         switch(arg){
             case "login":
             {
@@ -115,7 +112,7 @@ public void sendCommand(ServerNetworkCommand command){
             }
 
         }
-    
+
         System.out.print("Unknown command " + arg + "\n");
         return null;
     }

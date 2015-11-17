@@ -6,8 +6,10 @@ package grupp0.arena.server.controller;
 
 import grupp0.arena.server.controller.command.LoginCommand;
 import grupp0.arena.server.controller.command.ServerNetworkCommand;
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import static java.lang.Compiler.command;
 
@@ -52,7 +54,8 @@ public void run() {
     while(!socket.isClosed()){
         String input;
         try {
-            input = socket.getInputStream().toString();
+            BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            input = in.readLine() + "\n";
             ServerNetworkCommand command = interpret(input);
             command.perform();
         } catch (IOException ex) {

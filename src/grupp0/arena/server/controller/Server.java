@@ -58,7 +58,7 @@ public static Server getInstance() {
  */
 public void run(String[] args) {
     while (true) {
-        System.out.println("kan någon implementera mig? SNÄLLAAAAA");
+        System.out.println("kan nagon implementera mig? SNALLAAAAA");
         try {
             Thread.sleep(5000);
         }

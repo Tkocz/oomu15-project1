@@ -5,6 +5,9 @@
 */
 package grupp0.arena.server.controller.command;
 
+import grupp0.arena.base.model.User;
+import grupp0.arena.server.controller.Server;
+
 /**
 *
 * @author Rasmus
@@ -16,7 +19,16 @@ public LoginCommand(){
 
 @Override
 public void perform() {
-    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    String username = getArg(0);
+    String password = getArg(1);
+    
+    User user = Server.getInstance().getDatabase().loginUser(username, password);
+    
+    if(user == null)
+        sendCommand(new LoginFailCommand());
+    else
+        sendCommand(new LoginOKCommand());
+        
 }
 
 }

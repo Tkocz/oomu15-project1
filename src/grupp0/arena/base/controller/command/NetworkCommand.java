@@ -4,8 +4,6 @@ package grupp0.arena.base.controller.command;
  * IMPORTS
  *----------------------------------------------*/
 
-import grupp0.arena.base.model.UserType;
-
 /*------------------------------------------------
  * CLASS
  *----------------------------------------------*/
@@ -15,7 +13,7 @@ import grupp0.arena.base.model.UserType;
  *
  * @author Philip Arvidsson (S133686)
  */
-public abstract class Command {
+public abstract class NetworkCommand {
 
 /*------------------------------------------------
  * FIELDS
@@ -57,5 +55,7 @@ public String[] getArgs() {
 public String getArg(int index) {
     return (args[index]);
 }
+
+public abstract void perform();
 
 }

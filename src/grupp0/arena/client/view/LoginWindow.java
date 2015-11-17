@@ -1,4 +1,4 @@
-package grupp0.arena.view;
+package grupp0.arena.client.view;
 
 import grupp0.arena.controller.Client;
 import grupp0.arena.model.User;
@@ -19,7 +19,7 @@ import javafx.stage.Stage;
 
 public class LoginWindow extends Stage{
     public LoginWindow(){
-        
+
         setResizable(false);
         setTitle("Login A.R.E.N.A");
         getIcons().add(new Image("images/icon.png"));
@@ -48,7 +48,7 @@ public class LoginWindow extends Stage{
         inputFields.setSpacing(8);
 
         Button ok = new Button("Login");
-        ok.setOnAction(e -> {  
+        ok.setOnAction(e -> {
            User temp = Client.getInstance().getDatabase().loginUser(inputUser.getText(), inputPass.getText());
        if(temp != null){
            Client.getInstance().setLoggedInUser(Client.getInstance().getDatabase().loginUser(inputUser.getText(), inputPass.getText()));

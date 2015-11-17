@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package grupp0.arena.model;
+package grupp0.arena.client.model;
 
 import grupp0.arena.model.UserType;
 

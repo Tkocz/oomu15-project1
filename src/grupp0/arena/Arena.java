@@ -4,7 +4,8 @@ package grupp0.arena;
  * IMPORTS
  *----------------------------------------------*/
 
-import grupp0.arena.controller.Client;
+import grupp0.arena.client.controller.Client;
+import grupp0.arena.server.controller.Server;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -36,6 +37,10 @@ public void start(Stage primaryStage) {
         primaryStage.close();
         primaryStage = null;
     }
+
+    new Thread(() -> {
+        Server.getInstance().run(getParameters().getRaw().toArray(new String[0]));
+    }).start();
 
     Client.getInstance().run(getParameters().getRaw().toArray(new String[0]));
 }

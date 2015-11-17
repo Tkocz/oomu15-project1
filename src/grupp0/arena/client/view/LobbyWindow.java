@@ -1,5 +1,7 @@
-package grupp0.arena.view;
+package grupp0.arena.client.view;
 
+import grupp0.arena.controller.Client;
+import grupp0.arena.model.GameInfo;
 import javafx.fxml.FXMLLoader;
 import java.io.IOException;
 import javafx.application.Platform;
@@ -12,23 +14,34 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
 
-public class OperatorLobbyWindow extends AppWindow{
+public class LobbyWindow extends AppWindow{
 
  /**
- * Pane for displaying stuff?
+ * Pane for displaying Icons
  */
 @FXML
-private FlowPane operatorIcons;
+private FlowPane gameIcons;
 
  /**
  * Button for exiting the application
  */
 @FXML
 private Button quitButton;
+ /**
+ * Textfield for info about selected game
+ */
+@FXML
+private Label gameInfo;
 
-    public OperatorLobbyWindow(){
+ /**
+ * Textfield for info about selected game
+ */
+@FXML
+private Label gameTournament;
 
-        FXMLLoader fxml= new FXMLLoader(getClass().getResource("/fxml/OperatorLobbyWindow.fxml"));
+    public LobbyWindow(){
+
+        FXMLLoader fxml= new FXMLLoader(getClass().getResource("/fxml/LobbyWindow.fxml"));
 
         fxml.setController(this);
 
@@ -42,6 +55,8 @@ private Button quitButton;
         catch (IOException e) {
             e.printStackTrace();
         }
+         for (GameInfo gi : Client.getInstance().getDatabase().getGames())
+            gameIcons.getChildren().add(new GameIcon (gi));
     }
 
     private void setupHandlers() {

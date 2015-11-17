@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package grupp0.arena.controller;
+package grupp0.arena.client.controller;
 
 import grupp0.arena.model.GameInfo;
 import grupp0.arena.model.Player;

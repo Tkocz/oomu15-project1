@@ -1,4 +1,4 @@
-package grupp0.arena.controller;
+package grupp0.arena.client.controller;
 
 /*------------------------------------------------
  * IMPORTS

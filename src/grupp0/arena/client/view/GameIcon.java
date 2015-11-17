@@ -1,4 +1,4 @@
-package grupp0.arena.view;
+package grupp0.arena.client.view;
 
 /*------------------------------------------------
  * IMPORTS

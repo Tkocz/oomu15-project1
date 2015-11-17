@@ -55,6 +55,10 @@ public void run() {
         }
     }
 }
+public void sendCommand(ServerNetworkCommand command){
+    command.toString();
+    socket.
+}
 
 /*------------------------------------------------
  * PRIVATE METHODS

@@ -5,6 +5,7 @@ package grupp0.arena.server.controller.command;
  *----------------------------------------------*/
 
 import grupp0.arena.base.controller.command.NetworkCommand;
+import grupp0.arena.server.controller.ClientConnection;
 
 /*------------------------------------------------
  * CLASS
@@ -21,8 +22,21 @@ public abstract class ServerNetworkCommand extends NetworkCommand {
  * FIELDS
  *----------------------------------------------*/
 
+/**
+ * The relevant connection.
+ */
+private ClientConnection connection;
+
 /*------------------------------------------------
  * PUBLIC METHODS
  *----------------------------------------------*/
+
+public ClientConnection getConnection() {
+    return (connection);
+}
+
+public void setConnection(ClientConnection value) {
+    connection = value;
+}
 
 }

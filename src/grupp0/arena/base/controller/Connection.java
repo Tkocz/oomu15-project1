@@ -54,7 +54,7 @@ public void setSocket(Socket value) {
 @Override
 public void run() {
     try (InputStreamReader isr = new InputStreamReader(socket.getInputStream());
-         BufferedReader    br  = new BufferedReader(isr))
+         BufferedReader    br  = new BufferedReader   (isr))
     {
         while(!socket.isClosed()) {
             String         s       = br.readLine();

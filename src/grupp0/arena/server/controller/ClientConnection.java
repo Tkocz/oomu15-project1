@@ -108,6 +108,7 @@ public void sendCommand(ServerNetworkCommand command){
 
         }
     
+        System.out.print("Unknown command " + arg + "\n");
         return null;
     }
 }

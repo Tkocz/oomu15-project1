@@ -31,7 +31,7 @@ public void perform() {
     }
     else {
         Arena.trace("login success for user " + username);
-        getConnection().sendCommand(new LoginOKCommand());
+        getConnection().sendCommand(new LoginOKCommand(user.getName(), user.getType().toString()));
     }
 
 }

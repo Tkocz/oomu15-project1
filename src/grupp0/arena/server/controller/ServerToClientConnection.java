@@ -37,9 +37,6 @@ protected NetworkCommand createCommand(String commandString) {
 
     }
 
-    if (command != null)
-        command.setConnection(this);
-
     return (command);
 }
 

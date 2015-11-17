@@ -65,7 +65,14 @@ public void run() {
                 continue;
             }
 
-            command.perform();
+            command.setConnection(this);
+
+            try {
+                command.perform();
+            }
+            catch (Exception ex) {
+                ex.printStackTrace();
+            }
         }
     }
     catch (Exception ex) {

@@ -49,7 +49,7 @@ public MessageBox(String message, String title) {
 }
 
 public static void show(String message, String title) {
-    new MessageBox(title, message).showAndWait();
+    new MessageBox(message, title).showAndWait();
 }
 
 }

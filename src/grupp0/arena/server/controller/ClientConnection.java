@@ -8,6 +8,7 @@ import grupp0.arena.server.controller.command.LoginCommand;
 import grupp0.arena.server.controller.command.ServerNetworkCommand;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintWriter;
 import static java.lang.Compiler.command;
 
 import java.net.Socket;
@@ -60,8 +61,12 @@ public void run() {
     }
 }
 public void sendCommand(ServerNetworkCommand command){
-    command.toString();
-    socket.
+    try {
+        PrintWriter pw = new PrintWriter(socket.getOutputStream(), true);
+        pw.print(command.toString() + "\n");
+    } catch (IOException ex) {
+        Logger.getLogger(ClientConnection.class.getName()).log(Level.SEVERE, null, ex);
+    }
 }
 
 /*------------------------------------------------

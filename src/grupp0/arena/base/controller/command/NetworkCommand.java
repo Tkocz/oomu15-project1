@@ -70,6 +70,9 @@ public abstract void perform();
 public String toString() {
     String s = getCommandString();
 
+    if (args == null)
+        return (s);
+
     for (String arg : args)
         s += " " + arg;
 

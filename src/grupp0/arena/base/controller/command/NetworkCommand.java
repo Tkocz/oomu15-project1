@@ -20,14 +20,9 @@ public abstract class NetworkCommand {
  *----------------------------------------------*/
 
 /**
- * The command string.
- */
-private String commandString = null;
-
-/**
  * The command arguments.
  */
-private String[] args = null;
+private String[] args;
 
 /*------------------------------------------------
  * PUBLIC METHODS
@@ -39,7 +34,7 @@ private String[] args = null;
  * @return The command string.
  */
 public String getCommandString() {
-    return (commandString);
+    return (null);
 }
 
 /**
@@ -70,5 +65,15 @@ public void setArgs(String[] args){
 }
 
 public abstract void perform();
-    
+
+@Override
+public String toString() {
+    String s = getCommandString();
+
+    for (String arg : args)
+        s = s + " " + arg;
+
+    return (s);
+}
+
 }

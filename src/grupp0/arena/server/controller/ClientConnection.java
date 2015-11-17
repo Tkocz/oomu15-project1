@@ -5,8 +5,13 @@ package grupp0.arena.server.controller;
  *----------------------------------------------*/
 
 import grupp0.arena.server.controller.command.ServerNetworkCommand;
+import java.io.IOException;
+import java.io.InputStream;
+import static java.lang.Compiler.command;
 
 import java.net.Socket;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*------------------------------------------------
  * CLASS
@@ -39,7 +44,16 @@ public void send(ServerNetworkCommand command) {
 
 @Override
 public void run() {
-    // Här ska det hända grejer!
+    while(!socket.isClosed()){
+        String input;
+        try {
+            input = socket.getInputStream().toString();
+            ServerNetworkCommand command = interpret(input);
+            command.perform();
+        } catch (IOException ex) {
+            Logger.getLogger(ClientConnection.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
 
 /*------------------------------------------------

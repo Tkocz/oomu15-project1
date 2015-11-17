@@ -4,6 +4,7 @@ package grupp0.arena.server.controller;
  * IMPORTS
  *----------------------------------------------*/
 
+import grupp0.arena.Arena;
 import grupp0.arena.base.model.User;
 import grupp0.arena.server.controller.DatabaseManager;
 import grupp0.arena.server.controller.command.ServerNetworkCommand;
@@ -12,7 +13,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import static sun.management.snmp.jvminstr.JvmThreadInstanceEntryImpl.ThreadStateMap.Byte0.runnable;
 
 /*------------------------------------------------
  * CLASS
@@ -61,14 +61,15 @@ public static Server getInstance() {
  * @param args The program arguments.
  */
 public void run(String[] args) {
+    Arena.setServerThread();
+
     try {
         ServerSocket server = new ServerSocket(8000);
         while(true){
             Socket socket = server.accept();
-            ClientConnection connection = new ClientConnection();
+            ServerToClientConnection connection = new ServerToClientConnection();
             connection.setSocket(socket);
-            Thread t = new Thread(connection);
-            t.start();
+            Arena.fork(connection);
         }
     } catch (IOException ex) {
         Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);

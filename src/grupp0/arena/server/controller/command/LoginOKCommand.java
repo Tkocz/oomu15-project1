@@ -20,8 +20,4 @@ public String getCommandString() {
     return ("login_ok");
 }
 
-@Override
-public void perform() {
-}
-
 }

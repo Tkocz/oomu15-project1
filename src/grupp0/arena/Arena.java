@@ -22,8 +22,41 @@ import javafx.stage.Stage;
 public class Arena extends Application {
 
 /*------------------------------------------------
+ * FIELDS
+ *----------------------------------------------*/
+
+private static final ThreadLocal<Boolean> isClientThread =
+    new ThreadLocal<Boolean>() {
+        @Override
+        protected Boolean initialValue() {
+            return (false);
+        }
+    };
+
+/*------------------------------------------------
  * PUBLIC METHODS
  *----------------------------------------------*/
+
+/**
+ * Simple utility method to make threading neater.
+ *
+ * @param runnable The runnable to fork.
+ *
+ * @return The spawned thread.
+ */
+public static Thread fork(Runnable runnable) {
+    boolean clientThread = isClientThread.get();
+
+    Thread thread = new Thread(() -> {
+        if (clientThread) setClientThread();
+        else              setServerThread();
+
+        runnable.run();
+    });
+    thread.start();
+
+    return (thread);
+}
 
 /**
  * Starts the application.
@@ -42,6 +75,11 @@ public void start(Stage primaryStage) {
         Server.getInstance().run(getParameters().getRaw().toArray(new String[0]));
     }).start();
 
+    try {
+        Thread.sleep(1000);
+    }
+    catch (InterruptedException ex) { /* ... */ }
+
     Client.getInstance().run(getParameters().getRaw().toArray(new String[0]));
 }
 
@@ -52,6 +90,27 @@ public void start(Stage primaryStage) {
  */
 public static void main(String[] args) {
     launch(args);
+}
+
+public static void setClientThread() {
+    isClientThread.set(true);
+}
+
+public static void setServerThread() {
+    isClientThread.set(false);
+}
+
+/**
+ * Traces the specified string.
+ *
+ * @param format String format.
+ * @param args   String format arguments.
+ */
+public static void trace(String format, Object... args) {
+    if (isClientThread.get())
+        System.out.println("[client] " + String.format(format, args));
+    else
+        System.out.println("[server] " + String.format(format, args));
 }
 
 }

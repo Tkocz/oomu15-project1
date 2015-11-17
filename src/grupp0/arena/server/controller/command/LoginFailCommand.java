@@ -20,8 +20,4 @@ public String getCommandString() {
     return ("login_fail");
 }
 
-@Override
-public void perform() {
-}
-
 }

@@ -1,10 +1,10 @@
-package grupp0.arena.client.model;
+package grupp0.arena.base.model;
 
 /*------------------------------------------------
  * IMPORTS
  *----------------------------------------------*/
 
-import grupp0.arena.model.UserType;
+import grupp0.arena.base.model.UserType;
 
 /*------------------------------------------------
  * CLASS

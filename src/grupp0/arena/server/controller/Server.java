@@ -4,11 +4,8 @@ package grupp0.arena.server.controller;
  * IMPORTS
  *----------------------------------------------*/
 
-import grupp0.arena.controller.DatabaseManager;
-import grupp0.arena.model.User;
-import grupp0.arena.view.LobbyWindow;
-import grupp0.arena.view.LoginWindow;
-import grupp0.arena.view.SplashWindow;
+import grupp0.arena.base.model.User;
+import grupp0.arena.server.controller.DatabaseManager;
 
 /*------------------------------------------------
  * CLASS

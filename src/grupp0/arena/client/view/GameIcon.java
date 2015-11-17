@@ -4,7 +4,7 @@ package grupp0.arena.client.view;
  * IMPORTS
  *----------------------------------------------*/
 
-import grupp0.arena.model.GameInfo;
+import grupp0.arena.client.model.GameInfo;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;

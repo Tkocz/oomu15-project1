@@ -4,11 +4,10 @@ package grupp0.arena.client.controller;
  * IMPORTS
  *----------------------------------------------*/
 
-import grupp0.arena.controller.DatabaseManager;
-import grupp0.arena.model.User;
-import grupp0.arena.view.LobbyWindow;
-import grupp0.arena.view.LoginWindow;
-import grupp0.arena.view.SplashWindow;
+import grupp0.arena.base.model.User;
+import grupp0.arena.client.view.LobbyWindow;
+import grupp0.arena.client.view.LoginWindow;
+import grupp0.arena.client.view.SplashWindow;
 
 /*------------------------------------------------
  * CLASS
@@ -30,9 +29,6 @@ public class Client {
  */
 private static final Client instance = new Client();
 
-// @To-do: Replace this shit with a network interface.
-private DatabaseManager database = new DatabaseManager();
-
 /**
  * The logged in user.
  */
@@ -41,11 +37,6 @@ private User loggedInUser;
 /*------------------------------------------------
  * PUBLIC METHODS
  *----------------------------------------------*/
-
-// @To-do: Replace this shit with a network interface.
-public DatabaseManager getDatabase() {
-    return (database);
-}
 
 /**
  * Gets the client instance.

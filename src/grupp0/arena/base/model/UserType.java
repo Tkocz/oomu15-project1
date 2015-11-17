@@ -1,4 +1,4 @@
-package grupp0.arena.client.model;
+package grupp0.arena.base.model;
 
 /*------------------------------------------------
  * CLASS

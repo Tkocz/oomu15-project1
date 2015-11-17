@@ -1,13 +1,13 @@
-package grupp0.arena.client.controller;
+package grupp0.arena.base.controller;
 
 /*------------------------------------------------
  * IMPORTS
  *----------------------------------------------*/
 
-import grupp0.arena.model.Operator;
-import grupp0.arena.model.Player;
-import grupp0.arena.model.User;
-import grupp0.arena.model.UserType;
+import grupp0.arena.base.model.Operator;
+import grupp0.arena.base.model.Player;
+import grupp0.arena.base.model.User;
+import grupp0.arena.base.model.UserType;
 
 /*------------------------------------------------
  * CLASS

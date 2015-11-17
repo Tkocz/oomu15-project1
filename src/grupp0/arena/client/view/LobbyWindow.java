@@ -1,7 +1,7 @@
 package grupp0.arena.client.view;
 
-import grupp0.arena.controller.Client;
-import grupp0.arena.model.GameInfo;
+import grupp0.arena.client.controller.Client;
+import grupp0.arena.client.model.GameInfo;
 import javafx.fxml.FXMLLoader;
 import java.io.IOException;
 import javafx.application.Platform;
@@ -55,8 +55,8 @@ private Label gameTournament;
         catch (IOException e) {
             e.printStackTrace();
         }
-         for (GameInfo gi : Client.getInstance().getDatabase().getGames())
-            gameIcons.getChildren().add(new GameIcon (gi));
+         //for (GameInfo gi : Client.getInstance().getDatabase().getGames())
+           // gameIcons.getChildren().add(new GameIcon (gi));
     }
 
     private void setupHandlers() {

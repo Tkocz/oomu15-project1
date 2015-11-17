@@ -1,8 +1,8 @@
 package grupp0.arena.client.view;
 
-import grupp0.arena.controller.Client;
-import grupp0.arena.model.User;
-import grupp0.arena.model.UserType;
+import grupp0.arena.client.controller.Client;
+import grupp0.arena.base.model.User;
+import grupp0.arena.base.model.UserType;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -49,9 +49,9 @@ public class LoginWindow extends Stage{
 
         Button ok = new Button("Login");
         ok.setOnAction(e -> {
-           User temp = Client.getInstance().getDatabase().loginUser(inputUser.getText(), inputPass.getText());
+           User temp = null;//Client.getInstance().getDatabase().loginUser(inputUser.getText(), inputPass.getText());
        if(temp != null){
-           Client.getInstance().setLoggedInUser(Client.getInstance().getDatabase().loginUser(inputUser.getText(), inputPass.getText()));
+           //Client.getInstance().setLoggedInUser(Client.getInstance().getDatabase().loginUser(inputUser.getText(), inputPass.getText()));
            this.close();
            if(temp.getType().equals(UserType.PLAYER)){
                Platform.runLater(() -> new LobbyWindow ().showAndWait());

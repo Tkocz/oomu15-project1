@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package grupp0.arena.client.controller;
+package grupp0.arena.server.controller;
 
-import grupp0.arena.model.GameInfo;
-import grupp0.arena.model.Player;
-import grupp0.arena.model.Operator;
-import grupp0.arena.model.User;
+import grupp0.arena.client.model.GameInfo;
+import grupp0.arena.base.model.Player;
+import grupp0.arena.base.model.Operator;
+import grupp0.arena.base.model.User;
 import java.util.ArrayList;
 
 /**

@@ -71,7 +71,7 @@ public String toString() {
     String s = getCommandString();
 
     for (String arg : args)
-        s = s + " " + arg;
+        s += " " + arg;
 
     return (s);
 }

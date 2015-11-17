@@ -79,10 +79,6 @@ public void run(String[] args) {
  * PRIVATE METHODS
  *----------------------------------------------*/
 
-ServerNetworkCommand interpret(String s) {
-    // Kan någon vara vänlig att implementera mig? Tack på förhand.
-    return null;
-}
 
 /**
  * Private constructor.

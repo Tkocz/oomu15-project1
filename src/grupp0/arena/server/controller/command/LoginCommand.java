@@ -11,10 +11,7 @@ package grupp0.arena.server.controller.command;
 */
 public class LoginCommand extends ServerNetworkCommand{
 
-private String status;
-
-public LoginCommand(String status){
-    this.status = status;
+public LoginCommand(){
 }
 
 @Override

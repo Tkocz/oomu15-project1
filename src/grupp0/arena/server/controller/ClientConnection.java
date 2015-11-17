@@ -6,10 +6,8 @@ package grupp0.arena.server.controller;
 
 import grupp0.arena.server.controller.command.LoginCommand;
 import grupp0.arena.server.controller.command.ServerNetworkCommand;
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import static java.lang.Compiler.command;
 
@@ -19,6 +17,8 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 /*------------------------------------------------
  * CLASS
@@ -51,9 +51,12 @@ public void run() {
         String input;
         try {
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            input = in.readLine() + "\n";
+            input = in.readLine();
             ServerNetworkCommand command = interpret(input);
-            command.perform();
+            if (command != null) {
+                command.setConnection(this);
+                command.perform();
+            }
         } catch (IOException ex) {
             Logger.getLogger(ClientConnection.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -63,6 +66,7 @@ public void sendCommand(ServerNetworkCommand command){
     try {
         PrintWriter pw = new PrintWriter(socket.getOutputStream(), true);
         pw.print(command.toString() + "\n");
+        pw.flush();
     } catch (IOException ex) {
         Logger.getLogger(ClientConnection.class.getName()).log(Level.SEVERE, null, ex);
     }
@@ -90,11 +94,13 @@ public void sendCommand(ServerNetworkCommand command){
             arrListCommand.add(scanner.next());
         }
 
-        String[] args = new String[arrListCommand.size()];
-
-        args = (String[]) arrListCommand.toArray();
+        String[] args = arrListCommand.toArray(new String[0]);
 
         ServerNetworkCommand cmd = createCommand(args[0]);
+
+        if (cmd == null)
+            return (null);
+
         String[] arrayCopy = Arrays.copyOfRange(args, 1, args.length);
         cmd.setArgs(arrayCopy);
 

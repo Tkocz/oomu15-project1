@@ -17,7 +17,7 @@ import java.net.Socket;
  *
  * @author Philip Arvidsson (S133686)
  */
-public class ClientConnection {
+public class ClientConnection implements Runnable {
 
 private Socket socket;
 
@@ -35,6 +35,11 @@ public void setSocket(Socket value) {
 
 public void send(ServerNetworkCommand command) {
     // Skicka iväg kommandohelvetet här.
+}
+
+@Override
+public void run() {
+    // Här ska det hända grejer!
 }
 
 /*------------------------------------------------

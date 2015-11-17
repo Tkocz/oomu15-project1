@@ -22,12 +22,12 @@ public abstract class NetworkCommand {
 /**
  * The command string.
  */
-private final String commandString = null;
+private String commandString = null;
 
 /**
  * The command arguments.
  */
-private final String[] args = null;
+private String[] args = null;
 
 /*------------------------------------------------
  * PUBLIC METHODS
@@ -52,10 +52,23 @@ public String[] getArgs() {
     return (args);
 }
 
+/**
+ * getArg accessor method
+ * @param index is the parameter for the argument whished to be returned
+ * @return returns a string which is the argument decided by the index entered
+ */
 public String getArg(int index) {
     return (args[index]);
 }
 
-public abstract void perform();
+/**
+ * setArgs accessor method
+ * @param args takes an array which hold the argument that is suposed to be handled.
+ */
+public void setArgs(String[] args){
+    this.args = args;
+}
 
+public abstract void perform();
+    
 }

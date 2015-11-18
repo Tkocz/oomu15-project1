@@ -67,6 +67,8 @@ public void run() {
 
             command.setConnection(this);
 
+            Arena.trace("Received command: " + s);
+
             try {
                 command.perform();
             }

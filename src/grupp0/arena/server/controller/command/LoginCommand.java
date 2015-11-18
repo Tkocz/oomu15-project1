@@ -32,6 +32,7 @@ public void perform() {
     else {
         Arena.trace("login success for user " + username);
         getConnection().sendCommand(new LoginOKCommand(user.getName(), user.getType().toString()));
+        getConnection().sendCommand(new GameListCommand(Server.getInstance().getDatabase().getGames()));
     }
 
 }

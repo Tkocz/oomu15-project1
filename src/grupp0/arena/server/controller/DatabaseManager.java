@@ -5,7 +5,7 @@
  */
 package grupp0.arena.server.controller;
 
-import grupp0.arena.client.model.GameInfo;
+import grupp0.arena.base.model.GameInfo;
 import grupp0.arena.base.model.Player;
 import grupp0.arena.base.model.Operator;
 import grupp0.arena.base.model.User;

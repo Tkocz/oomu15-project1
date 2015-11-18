@@ -29,29 +29,31 @@ public class LoginOKCommand extends ClientNetworkCommand {
 
 @Override
 public void perform() {
-    String username = getArg(1);
-    String userType = getArg(0);
+    String username = getArg(0);
+    String userType = getArg(1);
 
     Class c = null;
-         if (userType.equals("player"  )) c = LobbyWindow.class;
-    else if (userType.equals("operator")) c = OperatorLobbyWindow.class;
+         if (userType.equals("PLAYER"  )) c = LobbyWindow.class;
+    else if (userType.equals("OPERATOR")) c = OperatorLobbyWindow.class;
     else Arena.trace("Unknown user type: " + userType);
 
     // Java wants lambda vars to be effectively final.
     final Class stageClass = c;
 
-    if (stageClass != null)
-        Platform.runLater(() -> {
-            try {
-                ((Stage)stageClass.newInstance()).showAndWait();
-            }
-            catch (IllegalAccessException ex) {
-                ex.printStackTrace();
-            }
-            catch (InstantiationException ex) {
-                ex.printStackTrace();
-            }
-        });
+    if (stageClass == null)
+        return;
+
+    Platform.runLater(() -> {
+        try {
+            ((Stage)stageClass.newInstance()).showAndWait();
+        }
+        catch (IllegalAccessException ex) {
+            ex.printStackTrace();
+        }
+        catch (InstantiationException ex) {
+            ex.printStackTrace();
+        }
+    });
 }
 
 }

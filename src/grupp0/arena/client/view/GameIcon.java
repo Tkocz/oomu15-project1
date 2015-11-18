@@ -5,6 +5,7 @@ package grupp0.arena.client.view;
  *----------------------------------------------*/
 
 import grupp0.arena.client.model.GameInfo;
+import javafx.geometry.Pos;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -38,6 +39,7 @@ private Text name;
 
 public GameIcon(GameInfo gameInfo) {
     this.gameInfo = gameInfo;
+    this.setAlignment(Pos.CENTER);
 
     icon = new ImageView(new Image(gameInfo.getImageURL()));
     name = new Text(gameInfo.getName());

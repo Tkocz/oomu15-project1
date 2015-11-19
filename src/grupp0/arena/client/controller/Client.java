@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
 import javafx.beans.property.SimpleListProperty;
+import javafx.beans.property.SimpleObjectProperty;
 
 /*------------------------------------------------
  * CLASS
@@ -39,7 +40,9 @@ private static final Client instance = new Client();
 
 private ClientToServerConnection connection;
 
-private SimpleListProperty gamesProperty = new SimpleListProperty();
+private final SimpleListProperty gamesProperty = new SimpleListProperty();
+
+private final SimpleObjectProperty adProperty = new SimpleObjectProperty(); 
 
 /**
  * The logged in user.
@@ -50,10 +53,17 @@ private User loggedInUser;
  * PUBLIC METHODS
  *----------------------------------------------*/
 
+public SimpleListProperty getGamesProperty(){
+    return gamesProperty;
+}
+
+public SimpleObjectProperty getAdProperty(){
+    return adProperty;
+}
+
 public ClientToServerConnection getConnection() {
     return (connection);
 }
-
 /**
  * Gets the client instance.
  *

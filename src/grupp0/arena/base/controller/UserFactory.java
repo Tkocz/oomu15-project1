@@ -4,6 +4,7 @@ package grupp0.arena.base.controller;
  * IMPORTS
  *----------------------------------------------*/
 
+import grupp0.arena.base.model.Advertiser;
 import grupp0.arena.base.model.Operator;
 import grupp0.arena.base.model.Player;
 import grupp0.arena.base.model.User;
@@ -37,6 +38,7 @@ public User createUser(UserType type) {
 
     case OPERATOR: return new Operator();
     case PLAYER  : return new Player  ();
+    case ADVERTISER: return new Advertiser();
 
     }
 

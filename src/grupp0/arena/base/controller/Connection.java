@@ -43,10 +43,19 @@ private Socket socket;
  * PUBLIC METHODS
  *----------------------------------------------*/
 
+/**
+ * getSocket accessor method
+ * @return returns this connections socket
+ */
 public Socket getSocket() {
     return (socket);
 }
 
+/**
+ * setSocket accessor method
+ * @param value this parameter takes a Socket and in order to change the connections
+ * socket.
+ */
 public void setSocket(Socket value) {
     socket = value;
 }
@@ -84,6 +93,7 @@ public void run() {
         Arena.trace("Connection closed: " + socket.toString());
     }
 }
+
 
 public void sendCommand(NetworkCommand command){
     try {

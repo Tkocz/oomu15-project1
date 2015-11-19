@@ -19,6 +19,11 @@ PLAYER,
 /**
  * Specifies that a user is an operator.
  */
-OPERATOR
+OPERATOR,
+
+/**
+ * Specifies that a user is an advertiser.
+ */
+ADVERTISER
 
 }

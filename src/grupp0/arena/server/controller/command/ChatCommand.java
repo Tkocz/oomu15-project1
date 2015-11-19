@@ -5,10 +5,31 @@
  */
 package grupp0.arena.server.controller.command;
 
+import grupp0.arena.server.controller.Server;
+
 /**
  *
  * @author Rasmus
  */
-public class ChatCommand {
+public class ChatCommand extends ServerNetworkCommand{
+    private String name;
+    private String text;
     
+    public ChatCommand(){
+        
+    }
+    
+    public ChatCommand(String name, String text){
+        setArgs(new String[]{name, text});
+    }
+    
+    @Override
+    public String getCommandString(){
+        return "chat";
+    }
+    
+    @Override
+    public void perform(){
+        Server.getInstance().broadcastCommand(this);
+    }
 }

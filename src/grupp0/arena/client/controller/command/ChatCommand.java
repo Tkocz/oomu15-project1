@@ -22,7 +22,7 @@ public class ChatCommand extends ClientNetworkCommand{
 
     @Override
     public void perform(){
-        String text = "<" + getArg(0) + "> " + getArg(1);
+        String text = "<" + getArg(0) + "> " + getArg(1) + "\n";
         Client.getInstance().chatTextProperty().setValue(Client.getInstance().chatTextProperty().getValue() + text);
     }
 }

@@ -4,6 +4,8 @@ import grupp0.arena.Arena;
 import grupp0.arena.base.model.AdvertisementInfo;
 import grupp0.arena.base.model.GameInfo;
 import grupp0.arena.client.controller.Client;
+import grupp0.arena.server.controller.Server;
+import grupp0.arena.server.controller.command.ChatCommand;
 
 import javafx.fxml.FXMLLoader;
 import java.io.IOException;
@@ -106,6 +108,7 @@ private Label gameDescription;
         sendChatButton.setOnAction(e -> {
             //lobbyChatView.appendText("\n" + lobbyChatField.getText());
             // @Todo: Skicka iväg ett new ChatCommand här!
+            Client.getInstance().getConnection().sendCommand(new ChatCommand("Bozze", lobbyChatField.getText()));
             lobbyChatField.clear();
         });
         //activeUser.setText("Logged in as: " +Client.getInstance().getLoggedInUser().getName());
@@ -132,7 +135,7 @@ private Label gameDescription;
             }
         });
 
-        lobbyChatField.textProperty().bind(Client.getInstance().chatTextProperty());
+        lobbyChatView.textProperty().bind(Client.getInstance().chatTextProperty());
         updateGames();
     }
 

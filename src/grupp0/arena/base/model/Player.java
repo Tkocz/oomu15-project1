@@ -8,14 +8,11 @@ package grupp0.arena.base.model;
 import grupp0.arena.base.model.UserType;
 
 /**
- *
+ * Player class extends the abstract class user
  * @author Zzooki
  */
 public class Player extends User{
 
-public Player(){
-
-}
 
 @Override
 public UserType getType() {

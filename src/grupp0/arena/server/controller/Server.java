@@ -39,14 +39,14 @@ public class Server {
 private static final Server instance = new Server();
 private final ArrayList<ServerToClientConnection> connections = new ArrayList();
 
-// @To-do: Replace this shit with a network interface.
+// @Todo: Replace this shit with a network interface.
 private DatabaseManager database = new DatabaseManager();
 
 /*------------------------------------------------
  * PUBLIC METHODS
  *----------------------------------------------*/
 
-// @To-do: Replace this shit with a network interface.
+// @Todo: Replace this shit with a network interface.
 public DatabaseManager getDatabase() {
     return (database);
 }

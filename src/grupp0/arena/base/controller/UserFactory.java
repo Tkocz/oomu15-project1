@@ -40,7 +40,7 @@ public User createUser(UserType type) {
 
     }
 
-    // @To-do: Log this. Specified type is unknown.
+    // @Todo: Log this. Specified type is unknown.
     return (null);
 }
 

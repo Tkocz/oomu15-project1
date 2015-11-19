@@ -22,6 +22,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.ListChangeListener;
+import java.util.Hashtable;
 
 
 /**
@@ -74,6 +75,8 @@ private ImageView adImageView;
 @FXML
 private Label gameDescription;
 
+private Hashtable<String, Image> adCache = new Hashtable<>();
+
     public LobbyWindow(){
 
         FXMLLoader fxml= new FXMLLoader(getClass().getResource("/fxml/LobbyWindow.fxml"));
@@ -123,7 +126,11 @@ private Label gameDescription;
             Platform.runLater(() -> {
                 //Arena.trace("nu ska vi visa en ad");
                 //adImageView.setImage(new Image(ad.getImageURL()));
-                adImageView.setImage(new Image(ad.getImageURL()));
+                if (!adCache.contains(ad.getImageURL()))
+                    adCache.put(ad.getImageURL(), new Image(ad.getImageURL()));
+
+                adImageView.setImage(adCache.get(ad.getImageURL()));
+
             });
         });
 

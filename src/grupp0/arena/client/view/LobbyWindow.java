@@ -1,6 +1,7 @@
 package grupp0.arena.client.view;
 
 import grupp0.arena.Arena;
+import grupp0.arena.base.model.AdvertisementInfo;
 import grupp0.arena.client.controller.Client;
 
 import javafx.fxml.FXMLLoader;
@@ -14,6 +15,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.FlowPane;
 import javafx.application.Platform;
+import javafx.beans.property.SimpleObjectProperty;
 
 
 /**
@@ -100,6 +102,7 @@ private Label gameDescription;
         sendChatButton.setOnAction(e -> lobbyChatView.appendText("\n" +lobbyChatField.getText()));
         //activeUser.setText("Logged in as: " +Client.getInstance().getLoggedInUser().getName());
         Client.getInstance().adProperty().addListener((o) -> {
+            AdvertisementInfo ad = ((AdvertisementInfo)((SimpleObjectProperty)o).getValue());
             Platform.runLater(() -> {
                 Arena.trace("nu ska vi visa en ad");
             });

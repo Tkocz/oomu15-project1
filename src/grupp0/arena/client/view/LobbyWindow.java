@@ -1,5 +1,8 @@
 package grupp0.arena.client.view;
 
+import grupp0.arena.Arena;
+import grupp0.arena.client.controller.Client;
+
 import javafx.fxml.FXMLLoader;
 import java.io.IOException;
 import javafx.fxml.FXML;
@@ -10,21 +13,22 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.FlowPane;
+import javafx.application.Platform;
 
 
 /**
  * This is the client's view of the application
- * 
+ *
  * @author Martin Bergqvist (S141564)
  */
 public class LobbyWindow extends AppWindow{
 
- 
+
  /**
  * Displays the Active User
  */
 @FXML
-private Label activeUser;   
+private Label activeUser;
  /**
  * Textarea for displaying the LobbyChat
  */
@@ -35,7 +39,7 @@ private TextArea lobbyChatView;
  */
 @FXML
 private TextField lobbyChatField;
-    
+
  /**
  * Pane for displaying Icons
  */
@@ -76,19 +80,30 @@ private Label gameDescription;
         }
          /*for (GameInfo gi : Client.getInstance().getDatabase().getGames()){
             GameIcon gameIcon = new GameIcon (gi);
-             gameIcon.setOnMouseClicked(e -> {  
+             gameIcon.setOnMouseClicked(e -> {
                 Platform.runLater(() -> gameDescription.setText(gi.getDescription()));
                         });
             gameIcons.getChildren().add(gameIcon);
             gameIcons.getChildren().add(new Separator());
-            
+
          }*/
     }
 
     private void setupHandlers() {
-    quitButton.setOnAction(e -> close());
-    sendChatButton.setDefaultButton(true);
-    sendChatButton.setOnAction(e -> lobbyChatView.appendText("\n" +lobbyChatField.getText()));
-    //activeUser.setText("Logged in as: " +Client.getInstance().getLoggedInUser().getName());        
+        quitButton.setOnAction(e -> close());
+        sendChatButton.setDefaultButton(true);
+        sendChatButton.setOnAction(e -> lobbyChatView.appendText("\n" +lobbyChatField.getText()));
+        //activeUser.setText("Logged in as: " +Client.getInstance().getLoggedInUser().getName());
+        Client.getInstance().adProperty().addListener((o) -> {
+            Platform.runLater(() -> {
+                Arena.trace("nu ska vi visa en ad");
+            });
+        });
+
+        Client.getInstance().gamesProperty().addListener((o) -> {
+            Platform.runLater(() -> {
+                Arena.trace("nu ska vi visa alla games");
+            });
+        });
     }
 }

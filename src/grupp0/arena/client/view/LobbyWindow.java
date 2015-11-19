@@ -2,6 +2,7 @@ package grupp0.arena.client.view;
 
 import grupp0.arena.Arena;
 import grupp0.arena.base.model.AdvertisementInfo;
+import grupp0.arena.base.model.GameInfo;
 import grupp0.arena.client.controller.Client;
 
 import javafx.fxml.FXMLLoader;
@@ -9,6 +10,7 @@ import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Separator;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -17,6 +19,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.collections.ListChangeListener;
 
 
 /**
@@ -120,15 +123,24 @@ private Label gameDescription;
             });
         });
 
-        /*Client.getInstance().gamesProperty().addListener((ListChangeListener o) -> {
-            Platform.runLater(() -> {
-                Arena.trace("nu ska vi visa alla games");
-            });
-
-
+        Client.getInstance().gamesProperty().addListener(new ListChangeListener() {
+            public void onChanged(ListChangeListener.Change o) {
+                Platform.runLater(() -> {
+                    updateGames();
+                });
+            }
         });
+        updateGames();
+    }
 
-
-        });*/
+    void updateGames() {
+         for (GameInfo gi : Client.getInstance().gamesProperty().getValue()) {
+            GameIcon gameIcon = new GameIcon (gi);
+             gameIcon.setOnMouseClicked(e -> {
+                Platform.runLater(() -> gameDescription.setText(gi.getDescription()));
+            });
+            gameIcons.getChildren().add(gameIcon);
+            gameIcons.getChildren().add(new Separator());
+         }
     }
 }

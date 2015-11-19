@@ -5,6 +5,7 @@ package grupp0.arena.client.controller;
  *----------------------------------------------*/
 
 import grupp0.arena.Arena;
+import grupp0.arena.base.model.GameInfo;
 import grupp0.arena.base.model.User;
 import grupp0.arena.client.controller.command.ClientNetworkCommand;
 import grupp0.arena.client.view.LobbyWindow;
@@ -12,6 +13,9 @@ import grupp0.arena.client.view.LoginWindow;
 import grupp0.arena.client.view.SplashWindow;
 import grupp0.arena.client.controller.ClientToServerConnection;
 
+import java.util.List;
+import java.util.ArrayList;
+import javafx.collections.FXCollections;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
@@ -40,7 +44,7 @@ private static final Client instance = new Client();
 
 private ClientToServerConnection connection;
 
-private final SimpleListProperty gamesProperty = new SimpleListProperty();
+private final SimpleListProperty gamesProperty = new SimpleListProperty<GameInfo>(FXCollections.observableArrayList(new ArrayList<GameInfo>()));
 
 private final SimpleObjectProperty adProperty = new SimpleObjectProperty();
 
@@ -53,7 +57,7 @@ private User loggedInUser;
  * PUBLIC METHODS
  *----------------------------------------------*/
 
-public SimpleListProperty gamesProperty(){
+public SimpleListProperty<GameInfo> gamesProperty(){
     return gamesProperty;
 }
 
@@ -104,7 +108,7 @@ public void run(String[] args) {
     // @To-do: Address should not be hard-coded.
     Socket socket = null;
     try {
-        socket = new Socket("localhost", 8000);
+        socket = new Socket("loopback", 8000);
         Arena.trace("Connected!");
     }
     catch (Exception ex) {

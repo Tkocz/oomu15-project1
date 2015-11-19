@@ -6,6 +6,7 @@ package grupp0.arena.client.controller;
 
 import grupp0.arena.base.controller.Connection;
 import grupp0.arena.base.controller.command.NetworkCommand;
+
 import grupp0.arena.client.controller.command.ChatCommand;
 import grupp0.arena.client.controller.command.GameListCommand;
 import grupp0.arena.client.controller.command.LoginFailCommand;
@@ -24,10 +25,6 @@ import grupp0.arena.client.controller.command.DisplayAdCommand;
 public class ClientToServerConnection extends Connection {
 
 /*------------------------------------------------
- * PUBLIC METHODS
- *----------------------------------------------*/
-
-/*------------------------------------------------
  * PROTECTED METHODS
  *----------------------------------------------*/
 
@@ -35,7 +32,7 @@ public class ClientToServerConnection extends Connection {
 protected NetworkCommand createCommand(String commandString) {
     NetworkCommand command = null;
 
-    switch(commandString){
+    switch (commandString) {
 
     case "chat"      : command = new ChatCommand     (); break;
     case "game_list" : command = new GameListCommand (); break;

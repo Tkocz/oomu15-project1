@@ -45,6 +45,7 @@ public class DatabaseManager {
        games.add(new GameInfo("World Of Warcraft", "L2P is for n00bz",
                "http://img3.wikia.nocookie.net/__cb20080327190257/wowwiki/images/thumb/d/d3/Wow-icon-scalable.svg/48px-Wow-icon-scalable.svg.png"));
 
+       ads.add(new AdvertisementInfo("Othello","http://oi68.tinypic.com/2aj84z8.jpg", temp3));
        ads.add(new AdvertisementInfo("hb.se","http://oi68.tinypic.com/20i8mtu.jpg", temp3));
        ads.add(new AdvertisementInfo("fra.se","http://oi67.tinypic.com/23h3g4h.jpg", temp3));
         //users.add(new Operator());

@@ -6,6 +6,7 @@
 package grupp0.arena.server.controller;
 
 import grupp0.arena.base.model.AdvertisementInfo;
+import grupp0.arena.base.model.Advertiser;
 import grupp0.arena.base.model.GameInfo;
 import grupp0.arena.base.model.Player;
 import grupp0.arena.base.model.Operator;

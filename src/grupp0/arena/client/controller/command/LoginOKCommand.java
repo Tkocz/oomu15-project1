@@ -6,6 +6,7 @@ package grupp0.arena.client.controller.command;
 
 import grupp0.arena.Arena;
 import grupp0.arena.client.controller.command.ClientNetworkCommand;
+import grupp0.arena.client.view.AdvertiserLobbyWindow;
 import grupp0.arena.client.view.LobbyWindow;
 import grupp0.arena.client.view.OperatorLobbyWindow;
 
@@ -33,8 +34,9 @@ public void perform() {
     String userType = getArg(1);
 
     Class c = null;
-         if (userType.equals("PLAYER"  )) c = LobbyWindow.class;
-    else if (userType.equals("OPERATOR")) c = OperatorLobbyWindow.class;
+         if (userType.equals("PLAYER"    )) c = LobbyWindow.class;
+    else if (userType.equals("OPERATOR"  )) c = OperatorLobbyWindow.class;
+    else if (userType.equals("ADVERTISER")) c = AdvertiserLobbyWindow.class;
     else Arena.trace("Unknown user type: " + userType);
 
     // Java wants lambda vars to be effectively final.

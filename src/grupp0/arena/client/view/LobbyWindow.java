@@ -105,7 +105,8 @@ private Label gameDescription;
         sendChatButton.setDefaultButton(true);
         sendChatButton.setOnAction(e -> {
             //lobbyChatView.appendText("\n" + lobbyChatField.getText());
-            //lobbyChatField.clear();
+            // @Todo: Skicka iväg ett new ChatCommand här!
+            lobbyChatField.clear();
         });
         //activeUser.setText("Logged in as: " +Client.getInstance().getLoggedInUser().getName());
         //sendChatButton.setOnAction(e -> lobbyChatView.appendText("\n" +lobbyChatField.getText()));

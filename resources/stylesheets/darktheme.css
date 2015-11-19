@@ -6,7 +6,6 @@ Button {
     -fx-cursor: hand;
     -fx-font-weight: bold;
 }
-
 CheckBox {
     -fx-text-fill: #cccccc;
 }

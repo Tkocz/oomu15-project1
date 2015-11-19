@@ -11,6 +11,10 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
+<!--
+    Hello
+-->
+
 <VBox prefHeight="768.0" prefWidth="1024.0" stylesheets="stylesheets/darktheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox alignment="CENTER" prefHeight="600.0" prefWidth="1024.0">
@@ -72,9 +76,9 @@
             </VBox>
          </children>
       </HBox>
-      <Pane prefWidth="325.0">
+      <Pane prefWidth="900.0">
          <children>
-            <ImageView fitHeight="73.0" fitWidth="922.0" layoutX="477.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="115.0" fitWidth="100.0" layoutX="450.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="images/ad_fra.jpg" />
                </image>

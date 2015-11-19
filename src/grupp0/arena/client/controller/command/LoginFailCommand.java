@@ -26,7 +26,7 @@ public class LoginFailCommand extends ClientNetworkCommand {
 
 @Override
 public void perform() {
-    Platform.runLater(() -> MessageBox.show("Login failed!", "Login Fail"));
+    Platform.runLater(() -> MessageBox.show("Login failed!", "Login Fail", null));
 }
 
 }

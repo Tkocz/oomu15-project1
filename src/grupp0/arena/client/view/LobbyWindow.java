@@ -104,8 +104,8 @@ private Label gameDescription;
         quitButton.setOnAction(e -> close());
         sendChatButton.setDefaultButton(true);
         sendChatButton.setOnAction(e -> {
-            lobbyChatView.appendText("\n" + lobbyChatField.getText());
-            lobbyChatField.clear();
+            //lobbyChatView.appendText("\n" + lobbyChatField.getText());
+            //lobbyChatField.clear();
         });
         //activeUser.setText("Logged in as: " +Client.getInstance().getLoggedInUser().getName());
         //sendChatButton.setOnAction(e -> lobbyChatView.appendText("\n" +lobbyChatField.getText()));
@@ -130,6 +130,8 @@ private Label gameDescription;
                 });
             }
         });
+
+        lobbyChatField.textProperty().bind(Client.getInstance().chatTextProperty());
         updateGames();
     }
 

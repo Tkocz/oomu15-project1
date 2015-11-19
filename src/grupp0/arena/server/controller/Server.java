@@ -95,9 +95,6 @@ void adThread(){
     AdvertisementInfo ads[] = database.getAds();
     Random random = new Random();
     while(true){
-        try {
-            AdvertisementInfo ad = ads[random.nextInt(ads.length)];
-            broadcastCommand(new DisplayAdCommand(ad.getImageURL(), ad.getLinkURL()));
         AdvertisementInfo ad = ads[random.nextInt(ads.length)];
         broadcastCommand(new DisplayAdCommand(ad.getImageURL(), ad.getLinkURL()));
         try {

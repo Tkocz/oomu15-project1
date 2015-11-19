@@ -105,7 +105,7 @@ private Label gameDescription;
             lobbyChatField.clear();
         });
         //activeUser.setText("Logged in as: " +Client.getInstance().getLoggedInUser().getName());
-        sendChatButton.setOnAction(e -> lobbyChatView.appendText("\n" +lobbyChatField.getText()));
+        //sendChatButton.setOnAction(e -> lobbyChatView.appendText("\n" +lobbyChatField.getText()));
         //activeUser.setText("Logged in as: " +Client.getInstance().getLoggedInUser().getName());
         Client.getInstance().adProperty().addListener((o) -> {
             AdvertisementInfo ad = ((AdvertisementInfo)((SimpleObjectProperty)o).getValue());

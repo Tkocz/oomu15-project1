@@ -107,10 +107,12 @@ public static void setServerThread() {
  * @param args   String format arguments.
  */
 public static void trace(String format, Object... args) {
+    String s = String.format(format, args);
+
     if (isClientThread.get())
-        System.out.println("[client] " + String.format(format, args));
+        System.out.println("[client] " + s);
     else
-        System.out.println("[server] " + String.format(format, args));
+        System.out.println("[server] " + s);
 }
 
 }

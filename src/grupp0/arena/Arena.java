@@ -34,7 +34,7 @@ private static final ThreadLocal<Boolean> isClientThread =
     };
 
 /*------------------------------------------------
- * PUBLIC METHODS
+ * PUBLIC METHODS-
  *----------------------------------------------*/
 
 /**

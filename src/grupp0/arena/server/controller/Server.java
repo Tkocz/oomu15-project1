@@ -60,7 +60,7 @@ public static Server getInstance() {
 public ServerToClientConnection[] getConnections(){
     synchronized(connections){
          return connections.toArray(new ServerToClientConnection[0]);
-    }   
+    }
 }
 
 /**
@@ -76,10 +76,10 @@ public void run(String[] args) {
         while(true){
             Socket socket = server.accept();
             ServerToClientConnection connection = new ServerToClientConnection();
+            connection.setSocket(socket);
             synchronized(connections){
                 connections.add(connection);
             }
-            connection.setSocket(socket);
             Arena.fork(connection);
         }
     } catch (IOException ex) {

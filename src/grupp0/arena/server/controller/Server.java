@@ -74,6 +74,8 @@ public ServerToClientConnection[] getConnections(){
 public void run(String[] args) {
     Arena.setServerThread();
 
+    Arena.fork(() -> adThread());
+
     try {
         ServerSocket server = new ServerSocket(8000);
         while(true){
@@ -96,6 +98,9 @@ void adThread(){
         try {
             AdvertisementInfo ad = ads[random.nextInt(ads.length)];
             broadcastCommand(new DisplayAdCommand(ad.getImageURL(), ad.getLinkURL()));
+        AdvertisementInfo ad = ads[random.nextInt(ads.length)];
+        broadcastCommand(new DisplayAdCommand(ad.getImageURL(), ad.getLinkURL()));
+        try {
             Thread.sleep(5000);
         } catch (InterruptedException ex) {
             Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);

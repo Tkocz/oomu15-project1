@@ -76,6 +76,7 @@ public String getArg(int index) {
  * @param args takes an array which hold the argument that is suposed to be handled.
  */
 public void setArgs(String[] args){
+<<<<<<< HEAD
     String[] temp = new String[args.length];
     for (int i = 0; i < temp.length; i++){
         temp[i] = "\"";
@@ -86,6 +87,9 @@ public void setArgs(String[] args){
 }
 
 public void setArgsWithoutQuotes(String[] args){
+=======
+
+>>>>>>> origin/master
     this.args = args;
 }
 

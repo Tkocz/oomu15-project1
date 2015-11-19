@@ -4,52 +4,62 @@ package grupp0.arena.client.view;
  * IMPORTS
  *----------------------------------------------*/
 
+import java.io.IOException;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
-import javafx.scene.layout.HBox;
 import javafx.scene.Scene;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 
 /*------------------------------------------------
  * CLASS
  *----------------------------------------------*/
 
-/**
- * Base class for all windows.
- *
- * @author Philip Arvidsson (S133686)
- */
-public class MessageBox extends AppWindow {
-
-/*------------------------------------------------
- * PUBLIC METHODS
- *----------------------------------------------*/
 
 /**
- * Constructor.
+ * This is the client's view of the application
+ * 
+ * @author Martin Bergqvist (S141564)
  */
-public MessageBox(String message, String title) {
-    // @To-do: Kasta den här sugiga skitkoden och gör något vettigt.
+public class MessageBox extends AppWindow{
+    
+    /**
+    * Button for accepting the message
+    */
+   @FXML
+    private Button okButton;
+   
+   /**
+    * Label for the message
+    */
+   @FXML
+    private Label messageLabel;
+   
+    public MessageBox(String message, String title, String details) {
 
-    HBox root = new HBox();
+        FXMLLoader fxml= new FXMLLoader(getClass().getResource("/fxml/MessageBox.fxml"));
 
-    root.getChildren().add(new Text(message));
+        fxml.setController(this);
 
-    Button okButton = new Button("OK");
-    okButton.setDefaultButton(true);
-    okButton.setOnAction((e) -> close());
+        try {
+            setScene(new Scene(fxml.load())); 
+            setResizable(false);
+            setTitle(title);
+            getIcons().add(new Image("images/icon.png"));
+            messageLabel.setText(message);
+            setupHandlers();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-    root.getChildren().add(okButton);
-
-    Scene scene = new Scene(root);
-
-    setResizable(false);
-    setScene(scene);
-}
-
-public static void show(String message, String title) {
-    new MessageBox(message, title).showAndWait();
-}
-
+    public static void show(String message, String title, String details) {
+        new MessageBox(message, title, details).showAndWait();
+    }
+    
+    private void setupHandlers() {
+        okButton.setOnAction((e) -> close());    
+    }
 }

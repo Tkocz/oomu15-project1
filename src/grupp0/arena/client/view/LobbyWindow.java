@@ -1,15 +1,11 @@
 package grupp0.arena.client.view;
 
-import grupp0.arena.client.controller.Client;
-import grupp0.arena.base.model.GameInfo;
 import javafx.fxml.FXMLLoader;
 import java.io.IOException;
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.Separator;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;

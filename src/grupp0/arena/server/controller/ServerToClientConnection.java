@@ -23,6 +23,12 @@ public class ServerToClientConnection extends Connection {
  * PUBLIC METHODS
  *----------------------------------------------*/
 
+@Override
+public void run() {
+    super.run();
+    // @To-do: Ta bort anslutningen från server connectiosn här
+}
+
 /*------------------------------------------------
  * PROTECTED METHODS
  *----------------------------------------------*/

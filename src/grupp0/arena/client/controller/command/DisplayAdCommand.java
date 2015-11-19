@@ -1,0 +1,21 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package grupp0.arena.client.controller.command;
+
+import grupp0.arena.Arena;
+
+/**
+ *
+ * @author Zzooki
+ */
+public class DisplayAdCommand extends ClientNetworkCommand{
+    
+    @Override
+    public void perform(){
+        //Visa ad i lobby
+        Arena.trace("visar ad" + getArg(0));
+    }
+}

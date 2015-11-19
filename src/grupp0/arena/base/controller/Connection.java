@@ -127,6 +127,7 @@ private NetworkCommand parseCommand(String s) {
                 temp = temp.substring(0, temp.length() - 1);
             }else {
                 while (scanner.hasNext()) {
+                    temp = temp.concat(" ");
                     temp = temp.concat(scanner.next());
                     if (temp.charAt(temp.length() - 1) == '\"') {
                         temp = temp.substring(0, temp.length() - 1);

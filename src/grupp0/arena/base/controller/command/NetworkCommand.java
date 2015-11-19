@@ -76,6 +76,7 @@ public String getArg(int index) {
  * @param args takes an array which hold the argument that is suposed to be handled.
  */
 public void setArgs(String[] args){
+
     this.args = args;
 }
 

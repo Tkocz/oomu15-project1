@@ -116,9 +116,26 @@ protected abstract NetworkCommand createCommand(String commandString);
 private NetworkCommand parseCommand(String s) {
     Scanner scanner = new Scanner(s);
     ArrayList<String> arrListCommand = new ArrayList<>();
+    String temp;
+
 
     while(scanner.hasNext()){
-        arrListCommand.add(scanner.next());
+        temp = scanner.next();
+        if (temp.charAt(0) == '"') {
+            temp = temp.substring(1, temp.length());
+            if (temp.charAt(temp.length() - 1) == '\"') {
+                temp = temp.substring(0, temp.length() - 1);
+            }else {
+                while (scanner.hasNext()) {
+                    temp = temp.concat(scanner.next());
+                    if (temp.charAt(temp.length() - 1) == '\"') {
+                        temp = temp.substring(0, temp.length() - 1);
+                        break;
+                    }
+                }
+            }
+        }
+        arrListCommand.add(temp);
     }
 
     String[] args = arrListCommand.toArray(new String[0]);
@@ -129,7 +146,7 @@ private NetworkCommand parseCommand(String s) {
         return (null);
 
     String[] arrayCopy = Arrays.copyOfRange(args, 1, args.length);
-    cmd.setArgs(arrayCopy);
+    cmd.setArgsWithoutQuotes(arrayCopy);
 
     return(cmd);
 }

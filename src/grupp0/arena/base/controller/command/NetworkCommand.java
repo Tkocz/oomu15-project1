@@ -41,7 +41,7 @@ private Connection connection;
  * @return The command arguments.
  */
 public String[] getArgs() {
-    // @To-do: Return a shallow copy.
+    // @Todo: Return a shallow copy.
     return (args);
 }
 
@@ -76,6 +76,16 @@ public String getArg(int index) {
  * @param args takes an array which hold the argument that is suposed to be handled.
  */
 public void setArgs(String[] args){
+    String[] temp = new String[args.length];
+    for (int i = 0; i < temp.length; i++){
+        temp[i] = "\"";
+        temp[i] = temp[i].concat(args[i]);
+        temp[i] = temp[i].concat("\"");
+    }
+    this.args = temp;
+}
+
+public void setArgsWithoutQuotes(String[] args){
     this.args = args;
 }
 

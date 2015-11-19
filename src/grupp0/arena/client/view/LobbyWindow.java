@@ -52,13 +52,13 @@ private FlowPane gameIcons;
 @FXML
 private Button quitButton;
  /**
- * Textfield for info about selected game
- */
- /**
  * Button for sending a chat-message to the LobbyChat
  */
 @FXML
 private Button sendChatButton;
+/**
+ * Textfield for info about selected game
+ */
 @FXML
 private Label gameDescription;
 
@@ -90,9 +90,12 @@ private Label gameDescription;
     }
 
     private void setupHandlers() {
-    quitButton.setOnAction(e -> close());
-    sendChatButton.setDefaultButton(true);
-    sendChatButton.setOnAction(e -> lobbyChatView.appendText("\n" +lobbyChatField.getText()));
-    //activeUser.setText("Logged in as: " +Client.getInstance().getLoggedInUser().getName());        
+        quitButton.setOnAction(e -> close());
+        sendChatButton.setDefaultButton(true);
+        sendChatButton.setOnAction(e -> {
+            lobbyChatView.appendText("\n" + lobbyChatField.getText());
+            lobbyChatField.clear();
+        });
+        //activeUser.setText("Logged in as: " +Client.getInstance().getLoggedInUser().getName());
     }
 }

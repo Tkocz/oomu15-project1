@@ -91,7 +91,7 @@ public void run(String[] args) {
     // @To-do: Address should not be hard-coded.
     Socket socket = null;
     try {
-        socket = new Socket("loopback", 8000);
+        socket = new Socket("localhost", 8000);
         Arena.trace("Connected!");
     }
     catch (Exception ex) {

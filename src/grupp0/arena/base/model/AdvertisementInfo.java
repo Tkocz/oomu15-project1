@@ -9,7 +9,7 @@ package grupp0.arena.base.model;
  * AdvertisementInfo contains information about the ads shown in the ARENA client.
  * @author Rasmus
  */
- 
+
 public class AdvertisementInfo {
     private String linkURL;
     private String imageURL;
@@ -18,7 +18,7 @@ public class AdvertisementInfo {
      * Constructor for AdvertisemntInfo.
      * @param link URL to the site that the advertisement redirects to when clicked.
      * @param image The image shown in the ARENA client.
-     * @param owner is of a Advertisement type which is the owner for this 
+     * @param owner is of a Advertisement type which is the owner for this
      * advertisement.
      */
     public AdvertisementInfo(String link, String image, Advertiser owner){
@@ -36,7 +36,7 @@ public class AdvertisementInfo {
      * Sets the URL for the ad shown in the ARENA client.
      * @param link URL to the image shown in the client.
      */
-    public void setImgURL(String link){
+    public void setImageURL(String link){
         imageURL = link;
     }
     /**
@@ -50,7 +50,7 @@ public class AdvertisementInfo {
      * Return the URL of the image shown in the ad as a String.
      * @return The URL of the image shown in the ARENA client.
      */
-    public String getImageUrl(){
+    public String getImageURL(){
         return imageURL;
     }
     /**
@@ -62,7 +62,7 @@ public class AdvertisementInfo {
         this.owner = owner;
     }
     /**
-     * getOwner accessor method 
+     * getOwner accessor method
      * @return returns the owner for the advertisement.
      */
     public Advertiser getOwner(){

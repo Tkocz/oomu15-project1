@@ -15,6 +15,7 @@ import grupp0.arena.client.controller.ClientToServerConnection;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
+import javafx.beans.property.SimpleListProperty;
 
 /*------------------------------------------------
  * CLASS
@@ -37,6 +38,8 @@ public class Client {
 private static final Client instance = new Client();
 
 private ClientToServerConnection connection;
+
+private SimpleListProperty gamesProperty = new SimpleListProperty();
 
 /**
  * The logged in user.

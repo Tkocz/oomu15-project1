@@ -6,6 +6,7 @@ package grupp0.arena.server.controller;
 
 import grupp0.arena.base.controller.Connection;
 import grupp0.arena.base.controller.command.NetworkCommand;
+import grupp0.arena.server.controller.command.ChatCommand;
 import grupp0.arena.server.controller.command.LoginCommand;
 
 /*------------------------------------------------
@@ -39,6 +40,7 @@ protected NetworkCommand createCommand(String commandString) {
 
     switch(commandString){
 
+    case "chat" : command = new ChatCommand (); break;
     case "login": command = new LoginCommand(); break;
 
     }

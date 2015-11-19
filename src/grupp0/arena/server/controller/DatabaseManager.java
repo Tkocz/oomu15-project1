@@ -40,9 +40,9 @@ public class DatabaseManager {
 
        games.add(new GameInfo("Othello", "The best Othello game ever made",
                "https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/package_games.png"));
-       games.add(new GameInfo("Counter-Strike", "",
+       games.add(new GameInfo("Counter-Strike", "Strike at the counter and Make the cashier mad",
                "https://cdn2.iconfinder.com/data/icons/perqui/48/cs.png"));
-       games.add(new GameInfo("World Of Warcraft", "",
+       games.add(new GameInfo("World Of Warcraft", "L2P is for n00bz",
                "http://img3.wikia.nocookie.net/__cb20080327190257/wowwiki/images/thumb/d/d3/Wow-icon-scalable.svg/48px-Wow-icon-scalable.svg.png"));
 
        ads.add(new AdvertisementInfo("hb.se","http://i40.tinypic.com/1z54rae.jpg", temp3));

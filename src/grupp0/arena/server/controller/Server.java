@@ -5,13 +5,16 @@ package grupp0.arena.server.controller;
  *----------------------------------------------*/
 
 import grupp0.arena.Arena;
+import grupp0.arena.base.model.AdvertisementInfo;
 import grupp0.arena.base.model.User;
 import grupp0.arena.server.controller.DatabaseManager;
+import grupp0.arena.server.controller.command.DisplayAdCommand;
 import grupp0.arena.server.controller.command.ServerNetworkCommand;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -84,6 +87,19 @@ public void run(String[] args) {
         }
     } catch (IOException ex) {
         Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
+    }
+}
+void adThread(){
+    AdvertisementInfo ads[] = database.getAds();
+    Random random = new Random();
+    while(true){
+        try {
+            AdvertisementInfo ad = ads[random.nextInt(ads.length)];
+            broadcastCommand(new DisplayAdCommand(ad.getImageURL(), ad.getLinkURL()));
+            Thread.sleep(5000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
 

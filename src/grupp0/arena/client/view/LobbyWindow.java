@@ -100,10 +100,10 @@ private Label gameDescription;
             });
         });
 
-        Client.getInstance().gamesProperty().addListener((o) -> {
+        /*Client.getInstance().gamesProperty().addListener((ListChangeListener o) -> {
             Platform.runLater(() -> {
                 Arena.trace("nu ska vi visa alla games");
             });
-        });
+        });*/
     }
 }

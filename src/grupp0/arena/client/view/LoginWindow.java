@@ -1,5 +1,6 @@
 package grupp0.arena.client.view;
 
+import grupp0.arena.client.controller.command.LoginCommand;
 import grupp0.arena.client.controller.Client;
 import grupp0.arena.base.model.User;
 import grupp0.arena.base.model.UserType;
@@ -49,19 +50,10 @@ public class LoginWindow extends Stage{
 
         Button ok = new Button("Login");
         ok.setOnAction(e -> {
-           User temp = null;//Client.getInstance().getDatabase().loginUser(inputUser.getText(), inputPass.getText());
-       if(temp != null){
-           //Client.getInstance().setLoggedInUser(Client.getInstance().getDatabase().loginUser(inputUser.getText(), inputPass.getText()));
-           this.close();
-           if(temp.getType().equals(UserType.PLAYER)){
-               Platform.runLater(() -> new LobbyWindow ().showAndWait());
-           }
-           else if(temp.getType().equals(UserType.OPERATOR)){
-               Platform.runLater(() -> new OperatorLobbyWindow().showAndWait());
-           }
-       }
-       else
-           MessageBox.show("Fel användarnamn/Lösenord, gör om gör rätt!", "Inloggning Misslyckad!");
+            String u = inputUser.getText(); // Username.
+            String p = inputPass.getText(); // Password.
+
+            Client.getInstance().getConnection().sendCommand(new LoginCommand(u, p));
         });
         Button cancel = new Button("Cancel");
         cancel.setOnAction(e -> {  System.exit(1);

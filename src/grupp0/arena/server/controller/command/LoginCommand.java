@@ -5,6 +5,7 @@
 */
 package grupp0.arena.server.controller.command;
 
+import grupp0.arena.Arena;
 import grupp0.arena.base.model.User;
 import grupp0.arena.server.controller.Server;
 
@@ -25,12 +26,13 @@ public void perform() {
     User user = Server.getInstance().getDatabase().loginUser(username, password);
 
     if(user == null) {
-        System.out.println("login fail for user " + username);
+        Arena.trace("login fail for user " + username);
         getConnection().sendCommand(new LoginFailCommand());
     }
     else {
-        System.out.println("login success for user " + username);
-        getConnection().sendCommand(new LoginOKCommand());
+        Arena.trace("login success for user " + username);
+        getConnection().sendCommand(new LoginOKCommand(user.getName(), user.getType().toString()));
+        getConnection().sendCommand(new GameListCommand(Server.getInstance().getDatabase().getGames()));
     }
 
 }

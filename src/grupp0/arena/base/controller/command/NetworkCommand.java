@@ -4,6 +4,8 @@ package grupp0.arena.base.controller.command;
  * IMPORTS
  *----------------------------------------------*/
 
+import grupp0.arena.base.controller.Connection;
+
 /*------------------------------------------------
  * CLASS
  *----------------------------------------------*/
@@ -24,18 +26,14 @@ public abstract class NetworkCommand {
  */
 private String[] args;
 
+/**
+ * The relevant connection.
+ */
+private Connection connection;
+
 /*------------------------------------------------
  * PUBLIC METHODS
  *----------------------------------------------*/
-
-/**
- * Gets the command string.
- *
- * @return The command string.
- */
-public String getCommandString() {
-    return (null);
-}
 
 /**
  * Gets the command arguments.
@@ -45,6 +43,23 @@ public String getCommandString() {
 public String[] getArgs() {
     // @To-do: Return a shallow copy.
     return (args);
+}
+
+/**
+ * Gets the command string.
+ *
+ * @return The command string.
+ */
+public String getCommandString() {
+    throw new UnsupportedOperationException("Not implemented!");
+}
+
+public Connection getConnection() {
+    return (connection);
+}
+
+public void setConnection(Connection value) {
+    connection = value;
 }
 
 /**
@@ -64,7 +79,9 @@ public void setArgs(String[] args){
     this.args = args;
 }
 
-public abstract void perform();
+public void perform() {
+    throw new UnsupportedOperationException("Not implemented!");
+}
 
 @Override
 public String toString() {

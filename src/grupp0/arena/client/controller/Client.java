@@ -4,10 +4,17 @@ package grupp0.arena.client.controller;
  * IMPORTS
  *----------------------------------------------*/
 
+import grupp0.arena.Arena;
 import grupp0.arena.base.model.User;
+import grupp0.arena.client.controller.command.ClientNetworkCommand;
 import grupp0.arena.client.view.LobbyWindow;
 import grupp0.arena.client.view.LoginWindow;
 import grupp0.arena.client.view.SplashWindow;
+import grupp0.arena.client.controller.ClientToServerConnection;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.Socket;
 
 /*------------------------------------------------
  * CLASS
@@ -29,6 +36,8 @@ public class Client {
  */
 private static final Client instance = new Client();
 
+private ClientToServerConnection connection;
+
 /**
  * The logged in user.
  */
@@ -37,6 +46,10 @@ private User loggedInUser;
 /*------------------------------------------------
  * PUBLIC METHODS
  *----------------------------------------------*/
+
+public ClientToServerConnection getConnection() {
+    return (connection);
+}
 
 /**
  * Gets the client instance.
@@ -72,7 +85,24 @@ public void setLoggedInUser(User value) {
  * @param args The program arguments.
  */
 public void run(String[] args) {
-    // @To-do: Connect to server while we show the splash screen?
+    Arena.setClientThread();
+
+    Arena.trace("Connecting...");
+    // @To-do: Address should not be hard-coded.
+    Socket socket = null;
+    try {
+        socket = new Socket("loopback", 8000);
+        Arena.trace("Connected!");
+    }
+    catch (Exception ex) {
+        ex.printStackTrace();
+        Arena.trace("Connection failed.");
+    }
+
+    connection = new ClientToServerConnection();
+    connection.setSocket(socket);
+    Arena.fork(connection);
+
     new SplashWindow().showAndWait();
     new LoginWindow ().showAndWait();
 }

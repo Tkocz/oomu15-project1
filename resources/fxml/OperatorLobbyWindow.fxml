@@ -30,7 +30,7 @@
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="500.0">
                            <children>
-                              <FlowPane fx:id="gameIcons" prefHeight="500.0" prefWidth="500.0">
+                              <FlowPane fx:id="listedObjects" prefHeight="500.0" prefWidth="500.0">
                                  <padding>
                                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </padding>
@@ -44,9 +44,10 @@
                   </ScrollPane>
                   <Pane prefHeight="50.0" prefWidth="200.0">
                     <children>
-                        <Button alignment="CENTER" layoutX="5.0" layoutY="5.0" mnemonicParsing="false" text="QuickMatch" />
-                        <Button alignment="CENTER" layoutX="125.0" layoutY="5.0" mnemonicParsing="false" text="SinglePlayer" />
-                        <Button fx:id="quitButton" alignment="CENTER" layoutX="250.0" layoutY="5.0" mnemonicParsing="false" text="Quit" />
+                        <Button fx:id="addOpButton" alignment="CENTER" layoutX="5.0" layoutY="5.0" mnemonicParsing="false" text="Add OP Stuff" />
+                        <Button fx:id="op2Button" alignment="CENTER" layoutX="165.0" layoutY="5.0" mnemonicParsing="false" text="Op2" />
+                        <Button fx:id="quitButton" alignment="CENTER" layoutX="450.0" layoutY="5.0" mnemonicParsing="false" text="Quit" />
+                        <Button fx:id="op3Button" layoutX="269.0" layoutY="5.0" mnemonicParsing="false" text="Op3" />
                     </children>
                   </Pane>
                </children>
@@ -58,31 +59,17 @@
                         <Insets bottom="5.0" left="5.0" />
                      </opaqueInsets>
                      <children>
-                        <Label fx:id="gameDescription" alignment="TOP_LEFT" layoutX="31.0" layoutY="14.0" prefHeight="200.0" prefWidth="450.0" text="Information about the selected game, perhaps a quick summary of the rules and whatnot" wrapText="true" />
+                        <Label fx:id="objectDescription" alignment="TOP_LEFT" layoutX="31.0" layoutY="14.0" prefHeight="200.0" prefWidth="450.0" text="Information about the selected object" wrapText="true" />
                      </children>
                   </Pane>
-                  <AnchorPane prefHeight="300.0" prefWidth="400.0">
-                     <children>
-                        <TextArea fx:id="lobbyChatView" editable="false" layoutX="56.0" layoutY="4.0" prefHeight="275.0" prefWidth="400.0" promptText="&gt;" />
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="100.0" prefWidth="400.0">
-                     <children>
-                        <TextField fx:id="lobbyChatField" layoutX="56.0" layoutY="31.0" prefWidth="300.0" />
-                        <Button fx:id="sendChatButton" layoutX="395.0" layoutY="31.0" mnemonicParsing="false" text="Send" />
-                     </children>
-                  </AnchorPane>
+                  <AnchorPane prefHeight="300.0" prefWidth="400.0" />
+                  <AnchorPane prefHeight="100.0" prefWidth="400.0" />
                </children>
             </VBox>
          </children>
       </HBox>
       <Pane prefWidth="900.0">
          <children>
-            <ImageView fitHeight="115.0" fitWidth="100.0" layoutX="450.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="images/ad_fra.jpg" />
-               </image>
-            </ImageView>
             <Text fill="#f2ebeb" layoutX="60.0" layoutY="121.0" rotate="-23.2" strokeType="OUTSIDE" strokeWidth="0.0" text="Advertisement">
                <font>
                   <Font size="24.0" />

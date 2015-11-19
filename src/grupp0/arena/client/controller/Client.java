@@ -129,6 +129,8 @@ public void run(String[] args) {
 
     new SplashWindow().showAndWait();
     new LoginWindow ().showAndWait();
+
+    Arena.trace("FX thread exited.");
 }
 
 /*------------------------------------------------

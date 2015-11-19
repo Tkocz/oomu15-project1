@@ -18,7 +18,6 @@ public class DisplayAdCommand extends ClientNetworkCommand{
     @Override
     public void perform(){
         //Visa ad i lobby
-        Arena.trace("visar ad" + getArg(0));
         String imageURL = getArg(0);
         String linkURL  = getArg(1);
         AdvertisementInfo ad = new AdvertisementInfo(linkURL, imageURL, null);

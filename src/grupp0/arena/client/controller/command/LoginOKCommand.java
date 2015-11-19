@@ -46,6 +46,11 @@ public void perform() {
         return;
 
     Platform.runLater(() -> {
+        // Close ALL windows and go to the lobby or whatever. Super hacky, but
+        // it works!
+        for (Stage stage : com.sun.javafx.stage.StageHelper.getStages())
+            Platform.runLater(() -> stage.close());
+
         try {
             ((Stage)stageClass.newInstance()).showAndWait();
         }

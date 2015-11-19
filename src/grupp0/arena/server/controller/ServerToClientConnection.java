@@ -6,6 +6,7 @@ package grupp0.arena.server.controller;
 
 import grupp0.arena.base.controller.Connection;
 import grupp0.arena.base.controller.command.NetworkCommand;
+import grupp0.arena.base.model.User;
 import grupp0.arena.server.controller.command.ChatCommand;
 import grupp0.arena.server.controller.command.LoginCommand;
 
@@ -21,8 +22,22 @@ import grupp0.arena.server.controller.command.LoginCommand;
 public class ServerToClientConnection extends Connection {
 
 /*------------------------------------------------
+ * FIELDS
+ *----------------------------------------------*/
+
+private User user;
+
+/*------------------------------------------------
  * PUBLIC METHODS
  *----------------------------------------------*/
+
+public User getUser() {
+    return (user);
+}
+
+public void setUser(User value) {
+    user = value;
+}
 
 @Override
 public void run() {

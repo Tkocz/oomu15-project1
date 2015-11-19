@@ -8,6 +8,7 @@ package grupp0.arena.server.controller.command;
 import grupp0.arena.Arena;
 import grupp0.arena.base.model.User;
 import grupp0.arena.server.controller.Server;
+import grupp0.arena.server.controller.ServerToClientConnection;
 
 /**
 *
@@ -31,6 +32,7 @@ public void perform() {
     }
     else {
         Arena.trace("login success for user " + username);
+        ((ServerToClientConnection)getConnection()).setUser(user);
         getConnection().sendCommand(new LoginOKCommand(user.getName(), user.getType().toString()));
         getConnection().sendCommand(new GameListCommand(Server.getInstance().getDatabase().getGames()));
     }

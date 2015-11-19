@@ -94,11 +94,12 @@ public void run(String[] args) {
 void adThread(){
     AdvertisementInfo ads[] = database.getAds();
     Random random = new Random();
+    int i = 0;
     while(true){
-        AdvertisementInfo ad = ads[random.nextInt(ads.length)];
+        AdvertisementInfo ad = ads[(i++) % ads.length];
         broadcastCommand(new DisplayAdCommand(ad.getImageURL(), ad.getLinkURL()));
         try {
-            Thread.sleep(5000);
+            Thread.sleep(15000);
         } catch (InterruptedException ex) {
             Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -107,7 +108,9 @@ void adThread(){
 
 public void broadcastCommand(ServerNetworkCommand command){
     for (ServerToClientConnection connection : getConnections()) {
-        connection.sendCommand(command);
+        // Only broadcast to logged in clients.
+        if (connection.getUser() != null)
+            connection.sendCommand(command);
     }
 }
 /*------------------------------------------------

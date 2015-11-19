@@ -25,6 +25,10 @@ public class Arena extends Application {
  * FIELDS
  *----------------------------------------------*/
 
+/**
+ * This is used to determine whether the current thread is a client thread or
+ * not.
+ */
 private static final ThreadLocal<Boolean> isClientThread =
     new ThreadLocal<Boolean>() {
         @Override
@@ -34,7 +38,7 @@ private static final ThreadLocal<Boolean> isClientThread =
     };
 
 /*------------------------------------------------
- * PUBLIC METHODS-
+ * PUBLIC METHODS
  *----------------------------------------------*/
 
 /**
@@ -92,10 +96,16 @@ public static void main(String[] args) {
     launch(args);
 }
 
+/**
+ * Marks the current thread as a client thread.
+ */
 public static void setClientThread() {
     isClientThread.set(true);
 }
 
+/**
+ * Marks the current thread as a server thread.
+ */
 public static void setServerThread() {
     isClientThread.set(false);
 }
@@ -107,12 +117,12 @@ public static void setServerThread() {
  * @param args   String format arguments.
  */
 public static void trace(String format, Object... args) {
-    String s = String.format(format, args);
+    boolean flag = isClientThread.get();
+    String  str  = (flag ? "[client] "
+                         : "[server] ")
+                 + String.format(format, args);
 
-    if (isClientThread.get())
-        System.out.println("[client] " + s);
-    else
-        System.out.println("[server] " + s);
+    System.out.println(str);
 }
 
 }

@@ -4,6 +4,8 @@ package grupp0.arena.client.view;
  * IMPORTS
  *----------------------------------------------*/
 
+import grupp0.arena.Arena;
+
 import javafx.application.Platform;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -62,14 +64,14 @@ public void showAndWait() {
  *                       the runnable.
  */
 private void setTimeout(Runnable runnable, int delayMillisecs) {
-    new Thread(() -> {
+    Arena.fork(() -> {
         try {
             Thread.sleep(delayMillisecs);
         }
         catch (InterruptedException ex) { /* ... */ }
 
         Platform.runLater(() -> runnable.run());
-    }).start();
+    });
 }
 
 }

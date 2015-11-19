@@ -22,6 +22,11 @@ public abstract class User {
  *----------------------------------------------*/
 
 /**
+ * The user's email.
+ */
+private String email;
+
+/**
  * The username.
  */
 private String name;
@@ -39,6 +44,24 @@ private String realName;
 /*------------------------------------------------
  * PUBLIC METHODS
  *----------------------------------------------*/
+
+/**
+ * Gets the email.
+ *
+ * @return The email.
+ */
+public String getEmail() {
+    return (name);
+}
+
+/**
+ * Sets the email.
+ *
+ * @param value The email.
+ */
+public void setEmail(String value) {
+    email = value;
+}
 
 /**
  * Gets the username.

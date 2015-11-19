@@ -17,12 +17,6 @@ import grupp0.arena.base.controller.command.NetworkCommand;
  */
 public abstract class ClientNetworkCommand extends NetworkCommand {
 
-/*------------------------------------------------
- * FIELDS
- *----------------------------------------------*/
-
-/*------------------------------------------------
- * PUBLIC METHODS
- *----------------------------------------------*/
+/* ... */
 
 }

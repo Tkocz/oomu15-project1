@@ -60,9 +60,10 @@ public class DatabaseManager {
     }
 
     private void createAds() {
-       ads.add(new AdvertisementInfo("Othello","http://oi68.tinypic.com/2aj84z8.jpg", temp3));
-       ads.add(new AdvertisementInfo("hb.se","http://oi68.tinypic.com/20i8mtu.jpg", temp3));
-       ads.add(new AdvertisementInfo("fra.se","http://oi67.tinypic.com/23h3g4h.jpg", temp3));
+        Advertiser advertiser = (Advertiser)getUser("advertiser");
+       ads.add(new AdvertisementInfo("Othello","http://oi68.tinypic.com/2aj84z8.jpg", advertiser));
+       ads.add(new AdvertisementInfo("hb.se","http://oi68.tinypic.com/20i8mtu.jpg", advertiser));
+       ads.add(new AdvertisementInfo("fra.se","http://oi67.tinypic.com/23h3g4h.jpg", advertiser));
     }
 
     public DatabaseManager() {

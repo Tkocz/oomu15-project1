@@ -78,8 +78,10 @@ public void run(String[] args) {
 
     try {
         ServerSocket server = new ServerSocket(8000);
+        Arena.trace("Waiting for connections...");
         while(true){
             Socket socket = server.accept();
+            Arena.trace("Connection accepted: " + socket.toString());
             ServerToClientConnection connection = new ServerToClientConnection();
             connection.setSocket(socket);
             synchronized(connections){
@@ -92,6 +94,7 @@ public void run(String[] args) {
     }
 }
 void adThread(){
+    Arena.trace("Advertiserment thread running...");
     AdvertisementInfo ads[] = database.getAds();
     Random random = new Random();
     int i = 0;
@@ -113,6 +116,13 @@ public void broadcastCommand(ServerNetworkCommand command){
             connection.sendCommand(command);
     }
 }
+
+void removeConnection(ServerToClientConnection conn) {
+    synchronized (connections) {
+        connections.remove(conn);
+    }
+}
+
 /*------------------------------------------------
  * PRIVATE METHODS
  *----------------------------------------------*/

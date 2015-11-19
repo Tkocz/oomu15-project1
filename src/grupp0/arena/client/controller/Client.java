@@ -111,21 +111,7 @@ public void setLoggedInUser(User value) {
 public void run(String[] args) {
     Arena.setClientThread();
 
-    Arena.trace("Connecting...");
-    // @Todo: Address should not be hard-coded.
-    Socket socket = null;
-    try {
-        socket = new Socket("localhost", 8000);
-        Arena.trace("Connected!");
-    }
-    catch (Exception ex) {
-        ex.printStackTrace();
-        Arena.trace("Connection failed.");
-    }
-
-    connection = new ClientToServerConnection();
-    connection.setSocket(socket);
-    Arena.fork(connection);
+    connectToServer();
 
     new SplashWindow().showAndWait();
     new LoginWindow ().showAndWait();
@@ -142,6 +128,24 @@ public void run(String[] args) {
  */
 private Client() {
     /* ... */
+}
+
+private void connectToServer() {
+    Arena.trace("Connecting...");
+    // @Todo: Address should not be hard-coded.
+    Socket socket = null;
+    try {
+        socket = new Socket("localhost", 8000);
+        Arena.trace("Connected!");
+    }
+    catch (Exception ex) {
+        ex.printStackTrace();
+        Arena.trace("Connection failed.");
+    }
+
+    connection = new ClientToServerConnection();
+    connection.setSocket(socket);
+    Arena.fork(connection);
 }
 
 }

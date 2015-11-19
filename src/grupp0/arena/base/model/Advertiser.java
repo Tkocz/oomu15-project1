@@ -11,11 +11,14 @@ package grupp0.arena.base.model;
  */
 public class Advertiser extends User{
     private int balance;
+    private AdvertisementInfo[] ownAds;
+    private int numberOfAds;
     /**
      * Advertiser constructor
      */
     public Advertiser(){
         balance = 0;
+        numberOfAds = 0;
     }
     /**
      * Advertiser constructor 
@@ -24,6 +27,7 @@ public class Advertiser extends User{
      */
     public Advertiser(int starterBalance){
         this.balance = starterBalance;
+        this.numberOfAds = 0;
     }
 
     @Override
@@ -44,5 +48,32 @@ public class Advertiser extends User{
      */
     public void setBalance(int balance){
         this.balance = balance;
+    }
+    /**
+     * getAd accessor method makes it able to return one of the advertisers 
+     * ads.
+     * @param index the index which is choosen represent the index of the add 
+     * which is going to be returned when called for. If index is a higher value
+     * then the number of ads the advertiser currently has or is lower than zero
+     * the method will return null.
+     * @return returns the ad that is stored at the index choosen.
+     */
+    public AdvertisementInfo getAd(int index){
+        if (index > numberOfAds || index < 0){
+            System.out.print("index out of bound!");
+            return(null);
+        }      
+        else
+            return(ownAds[index]);
+    }
+    /**
+     * setAd accessor method makes it able to add a advertisement to the advertiser
+     * which is the owner of the add
+     * @param info is the parameter for the advertisement which is a AdvertisementInfo
+     * type.
+     */
+    public void setAd(AdvertisementInfo info){
+        ownAds[numberOfAds] = info;
+        numberOfAds++;
     }
 }

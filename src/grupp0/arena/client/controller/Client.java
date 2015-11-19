@@ -42,7 +42,7 @@ private ClientToServerConnection connection;
 
 private final SimpleListProperty gamesProperty = new SimpleListProperty();
 
-private final SimpleObjectProperty adProperty = new SimpleObjectProperty(); 
+private final SimpleObjectProperty adProperty = new SimpleObjectProperty();
 
 /**
  * The logged in user.
@@ -53,11 +53,11 @@ private User loggedInUser;
  * PUBLIC METHODS
  *----------------------------------------------*/
 
-public SimpleListProperty getGamesProperty(){
+public SimpleListProperty gamesProperty(){
     return gamesProperty;
 }
 
-public SimpleObjectProperty getAdProperty(){
+public SimpleObjectProperty adProperty(){
     return adProperty;
 }
 

@@ -17,7 +17,7 @@ import javafx.scene.layout.FlowPane;
  * 
  * @author Martin Bergqvist (S141564)
  */
-public class OperatorLobbyWindow extends AppWindow{
+public class AdvertiserLobbyWindow extends AppWindow{
 
  
  /**
@@ -56,22 +56,31 @@ private Button quitButton;
 @FXML
 private FlowPane listedAds;
 
-    public OperatorLobbyWindow(){
+    public AdvertiserLobbyWindow(){
 
-        FXMLLoader fxml= new FXMLLoader(getClass().getResource("/fxml/OperatorLobbyWindow.fxml"));
+        FXMLLoader fxml= new FXMLLoader(getClass().getResource("/fxml/AdvertiserLobbyWindow.fxml"));
 
         fxml.setController(this);
 
         try {
             setScene(new Scene(fxml.load()));
             setResizable(false);
-            setTitle("asyar14h/oomu/Projekt - grupp 0 Operator Lobby");
+            setTitle("asyar14h/oomu/Projekt - grupp 0 Advertiser Lobby");
             getIcons().add(new Image("images/icon.png"));
             setupHandlers();
         }
         catch (IOException e) {
             e.printStackTrace();
         }
+         /*for (Adinfo ai : Client.getInstance().getDatabase().getAds()){
+            ListedAds listedAds = new listedAds (ai);
+             listedAds.setOnMouseClicked(e -> {  
+                Platform.runLater(() -> adDescription.setText(ai.getDescription()));
+                        });
+            listedAds.getChildren().add(listedAds);
+            listedAds.getChildren().add(new Separator());
+            
+         }*/
     }
 
     private void setupHandlers() {

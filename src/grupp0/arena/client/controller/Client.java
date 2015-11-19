@@ -19,6 +19,7 @@ import javafx.collections.FXCollections;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.beans.property.SimpleObjectProperty;
 
@@ -44,6 +45,8 @@ private static final Client instance = new Client();
 
 private ClientToServerConnection connection;
 
+private final SimpleStringProperty chatTextProperty = new SimpleStringProperty();
+
 private final SimpleListProperty gamesProperty = new SimpleListProperty<GameInfo>(FXCollections.observableArrayList(new ArrayList<GameInfo>()));
 
 private final SimpleObjectProperty adProperty = new SimpleObjectProperty();
@@ -56,6 +59,10 @@ private User loggedInUser;
 /*------------------------------------------------
  * PUBLIC METHODS
  *----------------------------------------------*/
+
+public SimpleStringProperty chatTextProperty() {
+    return chatTextProperty;
+}
 
 public SimpleListProperty<GameInfo> gamesProperty(){
     return gamesProperty;
@@ -105,10 +112,10 @@ public void run(String[] args) {
     Arena.setClientThread();
 
     Arena.trace("Connecting...");
-    // @To-do: Address should not be hard-coded.
+    // @Todo: Address should not be hard-coded.
     Socket socket = null;
     try {
-        socket = new Socket("loopback", 8000);
+        socket = new Socket("localhost", 8000);
         Arena.trace("Connected!");
     }
     catch (Exception ex) {

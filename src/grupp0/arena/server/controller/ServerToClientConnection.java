@@ -26,7 +26,7 @@ public class ServerToClientConnection extends Connection {
 @Override
 public void run() {
     super.run();
-    // @To-do: Ta bort anslutningen från server connectiosn här
+    // @Todo: Ta bort anslutningen från server connectiosn här
 }
 
 /*------------------------------------------------

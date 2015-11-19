@@ -19,6 +19,7 @@ import javafx.collections.FXCollections;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.beans.property.SimpleObjectProperty;
 
@@ -44,6 +45,8 @@ private static final Client instance = new Client();
 
 private ClientToServerConnection connection;
 
+private final SimpleStringProperty chatTextProperty = new SimpleStringProperty();
+
 private final SimpleListProperty gamesProperty = new SimpleListProperty<GameInfo>(FXCollections.observableArrayList(new ArrayList<GameInfo>()));
 
 private final SimpleObjectProperty adProperty = new SimpleObjectProperty();
@@ -56,6 +59,10 @@ private User loggedInUser;
 /*------------------------------------------------
  * PUBLIC METHODS
  *----------------------------------------------*/
+
+public SimpleStringProperty chatTextProperty() {
+    return chatTextProperty;
+}
 
 public SimpleListProperty<GameInfo> gamesProperty(){
     return gamesProperty;

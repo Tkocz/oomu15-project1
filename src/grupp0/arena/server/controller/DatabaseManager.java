@@ -22,7 +22,7 @@ public class DatabaseManager {
     private ArrayList<GameInfo> games = new ArrayList();
     private ArrayList<AdvertisementInfo> ads = new ArrayList();
 
-    public DatabaseManager() {
+    private void createUsers() {
         Player temp = new Player();
         temp.setName("player");
         temp.setPassword("123");
@@ -37,19 +37,38 @@ public class DatabaseManager {
         temp3.setName("advertiser");
         temp3.setPassword("123");
         users.add(temp3);
+    }
 
-       games.add(new GameInfo("Othello", "The best Othello game ever made",
-               "https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/package_games.png"));
-       games.add(new GameInfo("Counter-Strike", "Strike at the counter and Make the cashier mad",
-               "https://cdn2.iconfinder.com/data/icons/perqui/48/cs.png"));
-       games.add(new GameInfo("World Of Warcraft", "L2P is for n00bz",
-               "http://img3.wikia.nocookie.net/__cb20080327190257/wowwiki/images/thumb/d/d3/Wow-icon-scalable.svg/48px-Wow-icon-scalable.svg.png"));
+    private void createGames() {
+       games.add(new GameInfo(
+                     "Othello",
+                     "The best Othello game ever made",
+                     "https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/package_games.png"
+                 ));
 
+       games.add(new GameInfo(
+                     "Counter-Strike",
+                     "Strike at the counter and Make the cashier mad",
+                     "https://cdn2.iconfinder.com/data/icons/perqui/48/cs.png"
+                 ));
+
+       games.add(new GameInfo(
+                     "World Of Warcraft",
+                     "L2P is for n00bz",
+                     "http://img3.wikia.nocookie.net/__cb20080327190257/wowwiki/images/thumb/d/d3/Wow-icon-scalable.svg/48px-Wow-icon-scalable.svg.png"
+                 ));
+    }
+
+    private void createAds() {
        ads.add(new AdvertisementInfo("Othello","http://oi68.tinypic.com/2aj84z8.jpg", temp3));
        ads.add(new AdvertisementInfo("hb.se","http://oi68.tinypic.com/20i8mtu.jpg", temp3));
        ads.add(new AdvertisementInfo("fra.se","http://oi67.tinypic.com/23h3g4h.jpg", temp3));
-        //users.add(new Operator());
-        //users.add(new Advertiser());
+    }
+
+    public DatabaseManager() {
+        createUsers();
+        createGames();
+        createAds();
     }
 
     public GameInfo[] getGames(){

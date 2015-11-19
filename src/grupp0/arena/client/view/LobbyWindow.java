@@ -92,13 +92,11 @@ private Label gameDescription;
     private void setupHandlers() {
         quitButton.setOnAction(e -> close());
         sendChatButton.setDefaultButton(true);
-<<<<<<< HEAD
         sendChatButton.setOnAction(e -> {
             lobbyChatView.appendText("\n" + lobbyChatField.getText());
             lobbyChatField.clear();
         });
         //activeUser.setText("Logged in as: " +Client.getInstance().getLoggedInUser().getName());
-=======
         sendChatButton.setOnAction(e -> lobbyChatView.appendText("\n" +lobbyChatField.getText()));
         //activeUser.setText("Logged in as: " +Client.getInstance().getLoggedInUser().getName());
         Client.getInstance().adProperty().addListener((o) -> {
@@ -107,11 +105,14 @@ private Label gameDescription;
             });
         });
 
-        Client.getInstance().gamesProperty().addListener((o) -> {
+        /*Client.getInstance().gamesProperty().addListener((ListChangeListener o) -> {
             Platform.runLater(() -> {
                 Arena.trace("nu ska vi visa alla games");
             });
+<<<<<<< HEAD
         });
 >>>>>>> origin/master
+=======
+        });*/
     }
 }

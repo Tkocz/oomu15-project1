@@ -87,6 +87,11 @@ public void run(String[] args) {
     }
 }
 
+public void broadcastCommand(ServerNetworkCommand command){
+    for (ServerToClientConnection connection : getConnections()) {
+        connection.sendCommand(command);
+    }
+}
 /*------------------------------------------------
  * PRIVATE METHODS
  *----------------------------------------------*/

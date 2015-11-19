@@ -45,8 +45,8 @@ public class DatabaseManager {
        games.add(new GameInfo("World Of Warcraft", "",
                "http://img3.wikia.nocookie.net/__cb20080327190257/wowwiki/images/thumb/d/d3/Wow-icon-scalable.svg/48px-Wow-icon-scalable.svg.png"));
 
-       ads.add(new AdvertisementInfo("hb.se","C:\\Users\\Rasmus\\Documents\\NetBeansProjects\\oomu15-project1\\resources\\images/hb", temp3));
-       ads.add(new AdvertisementInfo("fra.se","C:\\Users\\Rasmus\\Documents\\NetBeansProjects\\oomu15-project1\\resources\\images/ad_fra2", temp3));
+       ads.add(new AdvertisementInfo("hb.se","http://i40.tinypic.com/1z54rae.jpg", temp3));
+       ads.add(new AdvertisementInfo("fra.se","http://oi67.tinypic.com/23h3g4h.jpg", temp3));
         //users.add(new Operator());
         //users.add(new Advertiser());
     }

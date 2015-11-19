@@ -21,7 +21,7 @@ public class DisplayAdCommand extends ClientNetworkCommand{
         Arena.trace("visar ad" + getArg(0));
         String imageURL = getArg(0);
         String linkURL  = getArg(1);
-        AdvertisementInfo ad = new AdvertisementInfo(imageURL, linkURL, null);
+        AdvertisementInfo ad = new AdvertisementInfo(linkURL, imageURL, null);
         Client.getInstance().adProperty().setValue(ad);
     }
 }

@@ -13,6 +13,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleObjectProperty;
@@ -58,6 +59,10 @@ private Button quitButton;
  */
 @FXML
 private Button sendChatButton;
+
+@FXML
+private ImageView adImageView;
+
 /**
  * Textfield for info about selected game
  */
@@ -89,6 +94,7 @@ private Label gameDescription;
             gameIcons.getChildren().add(new Separator());
 
          }*/
+
     }
 
     private void setupHandlers() {
@@ -103,8 +109,14 @@ private Label gameDescription;
         //activeUser.setText("Logged in as: " +Client.getInstance().getLoggedInUser().getName());
         Client.getInstance().adProperty().addListener((o) -> {
             AdvertisementInfo ad = ((AdvertisementInfo)((SimpleObjectProperty)o).getValue());
+
+            if (ad == null)
+                return;
+
             Platform.runLater(() -> {
-                Arena.trace("nu ska vi visa en ad");
+                //Arena.trace("nu ska vi visa en ad");
+                //adImageView.setImage(new Image(ad.getImageURL()));
+                adImageView.setImage(new Image(ad.getImageURL()));
             });
         });
 

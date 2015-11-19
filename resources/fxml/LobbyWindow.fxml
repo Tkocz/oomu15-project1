@@ -78,16 +78,11 @@
       </HBox>
       <Pane prefWidth="900.0">
          <children>
-            <ImageView fitHeight="115.0" fitWidth="100.0" layoutX="450.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="adImageView" fitHeight="120.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="false">
                <image>
                   <Image url="images/ad_fra.jpg" />
                </image>
             </ImageView>
-            <Text fill="#f2ebeb" layoutX="60.0" layoutY="121.0" rotate="-23.2" strokeType="OUTSIDE" strokeWidth="0.0" text="Advertisement">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Text>
          </children>
          <VBox.margin>
             <Insets left="5.0" right="5.0" />

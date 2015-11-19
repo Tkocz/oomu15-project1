@@ -4,6 +4,8 @@ package grupp0.arena.base.controller;
  * IMPORTS
  *----------------------------------------------*/
 
+import grupp0.arena.Arena;
+
 import grupp0.arena.base.model.Advertiser;
 import grupp0.arena.base.model.Operator;
 import grupp0.arena.base.model.Player;
@@ -42,7 +44,7 @@ public User createUser(UserType type) {
 
     }
 
-    // @Todo: Log this. Specified type is unknown.
+    Arena.trace("Unknown user type: " + type.toString());
     return (null);
 }
 

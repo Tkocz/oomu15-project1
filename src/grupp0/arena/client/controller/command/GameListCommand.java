@@ -19,19 +19,22 @@ import grupp0.arena.client.controller.Client;
  */
 public class GameListCommand extends ClientNetworkCommand {
 
+/*------------------------------------------------
+ * PUBLIC METHODS
+ *----------------------------------------------*/
+
 @Override
 public void perform() {
+    Client.getInstance().gamesProperty().clear();
+
     int numGames = Integer.parseInt(getArg(0));
     for (int i = 0; i < numGames; i++) {
-        String name     = getArg(3*i+1);
-        String desc     = getArg(3*i+2);
-        String imageURL = getArg(3*i+3);
+        String   name        = getArg(3*i+1);
+        String   description = getArg(3*i+2);
+        String   imageURL    = getArg(3*i+3);
+        GameInfo gameInfo    = new GameInfo(name, description, imageURL);
 
-        GameInfo gi = new GameInfo(name, desc, imageURL);
-
-
-        Arena.trace("Game: " + gi.getName() + " (" + gi.getDescription() + ")");
-        Client.getInstance().gamesProperty().add(gi);
+        Client.getInstance().gamesProperty().add(gameInfo);
     }
 
 }

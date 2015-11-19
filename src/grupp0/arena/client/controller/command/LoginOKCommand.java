@@ -5,6 +5,12 @@ package grupp0.arena.client.controller.command;
  *----------------------------------------------*/
 
 import grupp0.arena.Arena;
+
+import grupp0.arena.base.controller.UserFactory;
+import grupp0.arena.base.model.User;
+import grupp0.arena.base.model.UserType;
+
+import grupp0.arena.client.controller.Client;
 import grupp0.arena.client.controller.command.ClientNetworkCommand;
 import grupp0.arena.client.view.AdvertiserLobbyWindow;
 import grupp0.arena.client.view.LobbyWindow;
@@ -32,12 +38,27 @@ public class LoginOKCommand extends ClientNetworkCommand {
 public void perform() {
     String username = getArg(0);
     String userType = getArg(1);
+    UserFactory userFactory = new UserFactory();
 
-    Class c = null;
-         if (userType.equals("PLAYER"    )) c = LobbyWindow.class;
-    else if (userType.equals("OPERATOR"  )) c = OperatorLobbyWindow.class;
-    else if (userType.equals("ADVERTISER")) c = AdvertiserLobbyWindow.class;
-    else Arena.trace("Unknown user type: " + userType);
+    Class c    = null;
+    User  user = null;
+    if (userType.equals("ADVERTISER")) {
+        c    = AdvertiserLobbyWindow.class;
+        user = userFactory.createUser(UserType.ADVERTISER);
+    }
+    else if (userType.equals("OPERATOR")) {
+        c    = OperatorLobbyWindow.class;
+        user = userFactory.createUser(UserType.OPERATOR);
+    }
+    else if (userType.equals("PLAYER")) {
+        c    = LobbyWindow.class;
+        user = userFactory.createUser(UserType.PLAYER);
+    }
+    else {
+        Arena.trace("Unknown user type: " + userType);
+    }
+
+    Client.getInstance().setLoggedInUser(user);
 
     // Java wants lambda vars to be effectively final.
     final Class stageClass = c;

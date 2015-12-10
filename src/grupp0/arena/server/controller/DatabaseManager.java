@@ -43,10 +43,10 @@ public class DatabaseManager {
        games.add(new GameInfo(
                      "Othello",
                      "The best Othello game ever made",
-                     "https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/package_games.png"
+                     "http://cassio.free.fr/cassio/images/Icone_Cassio.png"
                  ));
 
-       games.add(new GameInfo(
+       /*games.add(new GameInfo(
                      "Counter-Strike",
                      "Strike at the counter and Make the cashier mad",
                      "https://cdn2.iconfinder.com/data/icons/perqui/48/cs.png"
@@ -56,14 +56,14 @@ public class DatabaseManager {
                      "World Of Warcraft",
                      "L2P is for n00bz",
                      "http://img3.wikia.nocookie.net/__cb20080327190257/wowwiki/images/thumb/d/d3/Wow-icon-scalable.svg/48px-Wow-icon-scalable.svg.png"
-                 ));
+                 ));*/
     }
 
     private void createAds() {
         Advertiser advertiser = (Advertiser)getUser("advertiser");
        ads.add(new AdvertisementInfo("Othello","http://oi68.tinypic.com/2aj84z8.jpg", advertiser));
        ads.add(new AdvertisementInfo("hb.se","http://oi68.tinypic.com/20i8mtu.jpg", advertiser));
-       ads.add(new AdvertisementInfo("fra.se","http://oi67.tinypic.com/23h3g4h.jpg", advertiser));
+       //ads.add(new AdvertisementInfo("fra.se","http://oi67.tinypic.com/23h3g4h.jpg", advertiser));
     }
 
     public DatabaseManager() {

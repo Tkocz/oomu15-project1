@@ -23,6 +23,7 @@ import javafx.application.Platform;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.ListChangeListener;
 import java.util.Hashtable;
+import java.io.File;
 
 
 /**
@@ -67,6 +68,12 @@ private Button quitButton;
 private Button sendChatButton;
 
 @FXML
+private Button singlePlayerButton;
+
+@FXML
+private Button quickMatchButton;
+
+@FXML
 private ImageView adImageView;
 
 /**
@@ -74,6 +81,8 @@ private ImageView adImageView;
  */
 @FXML
 private Label gameDescription;
+
+private GameInfo selectedGame = null;
 
 private Hashtable<String, Image> adCache = new Hashtable<>();
 
@@ -144,12 +153,31 @@ private Hashtable<String, Image> adCache = new Hashtable<>();
 
         lobbyChatView.textProperty().bind(Client.getInstance().chatTextProperty());
         updateGames();
+
+        singlePlayerButton.setOnAction((e) -> {
+            if (selectedGame == null)
+                return;
+
+            String path = "games/" + selectedGame.getName() + ".jar";
+
+            File f = new File(path);
+            if (!f.exists()) {
+                installGame(gi);
+            }
+
+            Arena.trace("shit is installed");
+        });
+    }
+
+    void installGame(GameInfo gi) {
+
     }
 
     void updateGames() {
          for (GameInfo gi : Client.getInstance().gamesProperty().getValue()) {
             GameIcon gameIcon = new GameIcon (gi);
-             gameIcon.setOnMouseClicked(e -> {
+            gameIcon.setOnMouseClicked(e -> {
+                selectedGame = gi;
                 Platform.runLater(() -> gameDescription.setText(gi.getDescription()));
             });
             gameIcons.getChildren().add(gameIcon);

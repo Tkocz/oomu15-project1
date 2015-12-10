@@ -44,8 +44,8 @@
                   </ScrollPane>
                   <Pane prefHeight="50.0" prefWidth="200.0">
                     <children>
-                        <Button alignment="CENTER" layoutX="5.0" layoutY="5.0" mnemonicParsing="false" text="QuickMatch" />
-                        <Button alignment="CENTER" layoutX="125.0" layoutY="5.0" mnemonicParsing="false" text="SinglePlayer" />
+                        <Button fx:id="quickMatchButton" alignment="CENTER" layoutX="5.0" layoutY="5.0" mnemonicParsing="false" text="QuickMatch" />
+                        <Button fx:id="singlePlayerButton" alignment="CENTER" layoutX="125.0" layoutY="5.0" mnemonicParsing="false" text="SinglePlayer" />
                         <Button fx:id="quitButton" alignment="CENTER" layoutX="250.0" layoutY="5.0" mnemonicParsing="false" text="Quit" />
                     </children>
                   </Pane>

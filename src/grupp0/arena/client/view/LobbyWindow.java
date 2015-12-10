@@ -166,6 +166,11 @@ private Hashtable<String, Image> adCache = new Hashtable<>();
             }
 
             Arena.trace("shit is installed");
+
+            //ProcessBuilder pb = new ProcessBuilder("/path/to/java", "-jar", path);
+            //pb.directory(new File("./"));
+            //Process p = pb.start();
+            Runtime.exec("java -jar " + path);
         });
     }
 

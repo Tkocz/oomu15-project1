@@ -43,7 +43,7 @@ public class DatabaseManager {
        games.add(new GameInfo(
                      "Othello",
                      "The best Othello game ever made",
-                     "http://cassio.free.fr/cassio/images/Icone_Cassio.png",
+                     "http://cassio.free.fr/cassio/images/Icone_Cassio.png"
                  ));
 
        /*games.add(new GameInfo(

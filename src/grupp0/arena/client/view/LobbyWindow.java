@@ -22,6 +22,9 @@ import javafx.scene.layout.FlowPane;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.ListChangeListener;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Hashtable;
 import java.io.File;
 
@@ -158,11 +161,13 @@ private Hashtable<String, Image> adCache = new Hashtable<>();
             if (selectedGame == null)
                 return;
 
-            String path = "games/" + selectedGame.getName() + ".jar";
+            String path = "./resources/games/" + selectedGame.getName() + ".jar";
 
             File f = new File(path);
             if (!f.exists()) {
-                installGame(gi);
+                Arena.trace("Installing game..");
+                installGame(selectedGame);
+
             }
 
             Arena.trace("shit is installed");
@@ -170,12 +175,17 @@ private Hashtable<String, Image> adCache = new Hashtable<>();
             //ProcessBuilder pb = new ProcessBuilder("/path/to/java", "-jar", path);
             //pb.directory(new File("./"));
             //Process p = pb.start();
-            Runtime.exec("java -jar " + path);
+            Runtime r = Runtime.getRuntime();
+            try {
+                Process p = r.exec("java -jar " + path);
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
         });
     }
 
     void installGame(GameInfo gi) {
-
+        ProgressWindow.show(gi);
     }
 
     void updateGames() {

@@ -11,10 +11,6 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<!--
-    Hello
--->
-
 <VBox prefHeight="768.0" prefWidth="1024.0" stylesheets="stylesheets/darktheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox alignment="CENTER" prefHeight="600.0" prefWidth="1024.0">
@@ -45,7 +41,7 @@
                   <Pane prefHeight="50.0" prefWidth="200.0">
                     <children>
                         <Button fx:id="addOpButton" alignment="CENTER" layoutX="5.0" layoutY="5.0" mnemonicParsing="false" text="Add OP Stuff" />
-                        <Button fx:id="op2Button" alignment="CENTER" layoutX="165.0" layoutY="5.0" mnemonicParsing="false" text="Op2" />
+                        <Button fx:id="op2Button" alignment="CENTER" layoutX="132.0" layoutY="5.0" mnemonicParsing="false" text="Initiate Service" />
                         <Button fx:id="quitButton" alignment="CENTER" layoutX="450.0" layoutY="5.0" mnemonicParsing="false" text="Quit" />
                         <Button fx:id="op3Button" layoutX="269.0" layoutY="5.0" mnemonicParsing="false" text="Op3" />
                     </children>

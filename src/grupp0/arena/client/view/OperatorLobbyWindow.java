@@ -140,3 +140,4 @@ private GameInfo selectedGame = null;
             listedObjects.getChildren().add(new Separator());
          }
     }
+}

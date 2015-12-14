@@ -45,6 +45,12 @@ public class DatabaseManager {
                      "The best Othello game ever made",
                      "http://cassio.free.fr/cassio/images/Icone_Cassio.png"
                  ));
+       
+       games.add(new GameInfo(
+                     "TicTacToe",
+                     "Classic boardgame for two",
+                     "http://www.clker.com/cliparts/8/9/d/8/1242809270906368991Tic_tac_toe.svg.hi.png"
+                 ));
 
        /*games.add(new GameInfo(
                      "Counter-Strike",

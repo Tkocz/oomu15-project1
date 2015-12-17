@@ -1,0 +1,44 @@
+<project name="oomu-project1" default="run">
+    <!-- Properties -->
+
+    <property name="bin-dir"       value="bin"                    />
+    <property name="classes-dir"   value="${bin-dir}/classes"     />
+    <property name="jar-dir"       value="${bin-dir}/jar"         />
+    <property name="jar-name"      value="Arena-Client.jar"              />
+    <property name="main-class"    value="grupp0.arena.ArenaClient"     />
+    <property name="resources-dir" value="resources"              />
+    <property name="src-dir"       value="src"                    />
+
+    <!-- Targets -->
+
+    <target name="clean">
+        <delete dir="${bin-dir}" />
+    </target>
+
+    <target name="compile">
+        <mkdir dir="${classes-dir}" />
+        <javac destdir="${classes-dir}" includeantruntime="false">
+            <src path="${src-dir}" />
+        </javac>
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="${jar-dir}" />
+        <jar destfile="${jar-dir}/${jar-name}">
+            <fileset dir="${classes-dir}" />
+            <fileset dir="${resources-dir}" />
+            <manifest>
+                <attribute name="Main-Class" value="${main-class}" />
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run" depends="jar">
+        <java jar="${jar-dir}/${jar-name}" fork="true" />
+    </target>
+
+    <!-- NetBeans sux. -->
+    <target name="jfx-build" depends="jar" />
+    <target name="jfxsa-run" depends="run" />
+    <target name="jfxsa-debug" depends="run" />
+</project>

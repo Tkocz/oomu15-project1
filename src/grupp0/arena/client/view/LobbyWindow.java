@@ -126,7 +126,7 @@ private Hashtable<String, Image> adCache = new Hashtable<>();
             Client.getInstance().getConnection().sendCommand(new ChatCommand("", lobbyChatField.getText()));
             lobbyChatField.clear();
         });
-        //activeUser.setText("Logged in as: " +Client.getInstance().getLoggedInUser().getName());
+        activeUser.setText("Logged in as: " +Client.getInstance().getLoggedInUser());
         //sendChatButton.setOnAction(e -> lobbyChatView.appendText("\n" +lobbyChatField.getText()));
         //activeUser.setText("Logged in as: " +Client.getInstance().getLoggedInUser().getName());
         Client.getInstance().adProperty().addListener((o) -> {

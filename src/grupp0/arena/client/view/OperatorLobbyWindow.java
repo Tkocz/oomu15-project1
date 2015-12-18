@@ -101,6 +101,7 @@ private GameInfo selectedGame = null;
                 });
             }
         });
+        activeUser.setText("Logged in as: " +Client.getInstance().getLoggedInUser());
         
         updateGames();
 
@@ -109,13 +110,13 @@ private GameInfo selectedGame = null;
                 return;
 
             String path = "./resources/games/" + selectedGame.getName() + "Server.jar";
-
             File f = new File(path);
             if (!f.exists()) {
-                Arena.trace("Service not available at this time...");
+                Arena.trace("Installing game..");
+                installService(selectedGame);
             }
 
-            Arena.trace("shit is running");
+            Arena.trace("shit is installed");
 
             //ProcessBuilder pb = new ProcessBuilder("/path/to/java", "-jar", path);
             //pb.directory(new File("./"));
@@ -139,5 +140,9 @@ private GameInfo selectedGame = null;
             listedObjects.getChildren().add(gameIcon);
             listedObjects.getChildren().add(new Separator());
          }
+    }
+    
+    void installService(GameInfo gi) {
+        ServiceWindow.show(gi);
     }
 }

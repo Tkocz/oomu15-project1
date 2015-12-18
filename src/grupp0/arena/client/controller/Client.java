@@ -135,7 +135,7 @@ private void connectToServer() {
     // @Todo: Address should not be hard-coded.
     Socket socket = null;
     try {
-        socket = new Socket("localhost", 8000);
+        socket = new Socket("10.10.238.120", 8000);
         Arena.trace("Connected!");
     }
     catch (Exception ex) {

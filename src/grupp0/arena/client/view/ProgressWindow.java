@@ -74,13 +74,14 @@ public class ProgressWindow extends AppWindow {
 
             URL url = null;
             try {
+                Arena.trace("HERE");
                 url = new URL(temp);
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
 
             HttpURLConnection httpConnection = (HttpURLConnection) (url.openConnection());
-            long completeFileSize = httpConnection.getContentLength();
+            long fileSize = httpConnection.getContentLength();
 
             java.io.BufferedInputStream in = new java.io.BufferedInputStream(httpConnection.getInputStream());
             java.io.FileOutputStream fos = new java.io.FileOutputStream(path);
@@ -92,7 +93,7 @@ public class ProgressWindow extends AppWindow {
                 downloadedFileSize += x;
 
                 // calculate progress
-                final int currentProgress = (int) ((((double) downloadedFileSize) / ((double) completeFileSize)) * 100000d);
+                final int currentProgress = (int) ((((double) downloadedFileSize) / ((double) fileSize)) * 100000d);
 
                 // update progress bar
                 progressBar.setProgress(currentProgress);
